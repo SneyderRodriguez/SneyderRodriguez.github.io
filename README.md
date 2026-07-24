@@ -57,7 +57,7 @@ PORTAFOLIO/
 
 ## 📸 Capturas de pantalla
 
-![prototipo-visual.png](https://postimg.cc/8fdMFnDV)
+[![prototipo-visual.png](https://i.postimg.cc/0jFfBLBr/prototipo-visual.png)](https://postimg.cc/8fdMFnDV)
 
 ---
 
