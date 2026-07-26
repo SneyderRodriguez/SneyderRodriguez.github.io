@@ -69,6 +69,6 @@ GitHub: https://github.com/SneyderRodriguez?tab=repositories
 
 LinkedIn: https://github.com/SneyderRodriguez?tab=repositories
 
-wireframe:
+Figma: https://www.figma.com/design/WA3s4A8sJaPtW9GLDvTcZ6/Portafolio?node-id=0-1&t=lkxO2Dmn1NlUFEDW-1
 
 ---
