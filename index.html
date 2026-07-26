@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/9868a66798.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <!-- =================================================================================
+                        HEADER/NAVBAR
+         ================================================================================= -->
     <header class="header-landing">
         <nav class="navbar">
+            <a href="assets/CV/" class="nav-cv" download="">
+                <span>Descargar CV</span>
+            </a>
             <ul class="nav-list">
                 <li>
-                    <a href="#hero" class="active">
+                    <a href="#hero">
                         <img src="assets/Icons/house.png" alt="Inicio">
                         <span>Inicio</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#aboutme">
+                    <a href="#about">
                         <img src="assets/Icons/aboutme.png" alt="Acerca de mí">
                         <span>Acerca de mí</span>
                     </a>
@@ -43,25 +48,174 @@
     </header>
 
     <main>
+        <!-- =================================================================================
+                                    HERO
+             ================================================================================= -->
         <section id="hero">
-            <div class="hero-section">
-                <h1>DESARROLLADOR FULL/STACK JAVA</h1>
-                <h2>Sneyder Rodriguez</h2>
-                <div class="cta">
-                    <a href="#contact">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Desarrollador Full-Stack Java</h1>
+                    <h2>Sneyder Rodriguez</h2>
+                    <a href="#contact" class="hero-cta">
                         <img src="assets/Icons/Contacto.png" alt="Contacto">
-                        <span>Contacto</span>
-                        Contacto
+                        <span>Contáctame</span>
                     </a>
+                    <div class="hero-scene">
+                        <!-- Elemento Protagonista -->
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="aboutme"></section>
-        <section id="skills"></section>
-        <section id="project"></section>
-        <section id="contact"></section>
+        <!-- =================================================================================
+                                    ACERCA DE MÍ
+             ================================================================================= -->
+        <section id="about">
+            <div class="about-container">
+                <header class="about-title">
+                    <h2>Acerca de mí</h2>
+                    <p class="about-phrase">Inspirado por la lógica del hardware,
+                        apasionado por el arte de programar</p>
+                </header>
+                <div class="about-content">
+                    <p>Ingeniero de Sistemas con enfoque en desarrollo Full-Stack Java.</p>
+                    <p>Mi camino comenzó cuando descubrí cómo una simple pila de reloj
+                        impedía que un PC encendiera.</p>
+                    <p>Esta sorpresa me llevó a estudiar Ingeniería de Sistemas, donde descubrí la programación.</p>
+                    <p>Actualmente continúo aprendiendo y desarrollando aplicaciones web,
+                        buscando crear soluciones funcionales y seguir creciendo como desarrollador Full-Stack.</p>
+                </div>
+            </div>
+        </section>
+        <!-- =================================================================================
+                                    TECNOLOGÍAS
+             ================================================================================= -->
+        <section id="skills">
+            <div class="skill-container">
+                <header class="skill-title">
+                    <h2>Habilidades</h2>
+                </header>
+                <div class="skill-tree">
+                    <div class="skill-center">
+                        <img src="assets/Imagenes/uniremington.png" alt="logo Uniremington">
+                    </div>
+                    <div class="skill-java">
+                        <img src="assets/Imagenes/java.png" alt="logo Java">
+                    </div>
+                    <div class="skill-postgresql">
+                        <img src="assets/Imagenes/postgresql.png" alt="logo PostreSQL">
+                    </div>
+                    <div class="skill-nodejs">
+                        <img src="assets/Imagenes/nodejs.png" alt="logo Node.js">
+                    </div>
+                    <div class="skill-js">
+                        <img src="assets/Imagenes/javascript.png" alt="logo JavaScript">
+                    </div>
+                    <div class="skill-html">
+                        <img src="assets/Imagenes/html.png" alt="logo HTML">
+                    </div>
+                    <div class="skill-css">
+                        <img src="assets/Imagenes/css.png" alt="logo CSS">
+                    </div>
+                    <div class="skill-future">
+                        <!-- img? -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =================================================================================
+                                    PROYECTOS
+             ================================================================================= -->
+        <section id="projects">
+            <div class="project-container">
+                <header class="project-title">
+                    <h2>Registros</h2>
+                </header>
+
+                <div class="project-carousel">
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="project-info">
+                            <!-- Título del proyecto -->
+                            <h3></h3>
+                            <!-- Descripción del proyecto -->
+                            <p></p>
+                            <!-- Tecnologías usadas en el proyecto -->
+                            <div class="project-stack"></div>
+                            <!-- URL Github y Demo -->
+                            <div class="project-links">
+                                <a href=""></a>
+                                <a href=""></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="project-info">
+                            <!-- Título del proyecto -->
+                            <h3></h3>
+                            <!-- Descripción del proyecto -->
+                            <p></p>
+                            <!-- Tecnologías usadas en el proyecto -->
+                            <div class="project-stack"></div>
+                            <!-- URL Github y Demo -->
+                            <div class="project-links">
+                                <a href=""></a>
+                                <a href=""></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="project-info">
+                            <!-- Título del proyecto -->
+                            <h3></h3>
+                            <!-- Descripción del proyecto -->
+                            <p></p>
+                            <!-- Tecnologías usadas en el proyecto -->
+                            <div class="project-stack"></div>
+                            <!-- URL Github y Demo -->
+                            <div class="project-links">
+                                <a href=""></a>
+                                <a href=""></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <button class="prev" aria-label="Proyecto Anterior"></button>
+                <button class="next" aria-label="Proyecto Siguiente"></button>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer id="contact">
+        <div class="footer-logo">
+            <img src="" alt="">
+        </div>
+
+        <nav class="contact-container">
+            <a href="https://github.com/SneyderRodriguez?tab=repositories" aria-label="GitHub" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </a>
+            <a href="https://www.linkedin.com/in/sneyder-rodriguez-ingeniero-de-sistemas/" aria-label="Linkedin" 
+            target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
+            <a href="mailto:" aria-label="Correo electrónico" target="_blank">
+                <i class="fa-solid fa-at"></i>
+            </a>
+        </nav>
+
+        <div class="footer-copy">
+            <small>© 2026 Jimmyan Sneyder Rodríguez Delgadillo</small>
+        </div>
+    </footer>
 </body>
 
 </html>
