@@ -109,6 +109,7 @@ body::before {
 }
 .nav-list img{
     width: 32px;
+     outline:1px solid red;
 }
 .nav-list a{
     display: flex;
@@ -116,6 +117,12 @@ body::before {
     gap: .5rem;
     text-decoration: none;
     color: var(--textoprincipal);
+    padding: .75rem;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+.nav-list a:hover{
+    box-shadow: 0 0 18px var(--shadow-blue);
 }
 .nav-list span{
     display: none;
