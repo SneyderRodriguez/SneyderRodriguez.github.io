@@ -1,9 +1,122 @@
-:root{
+:root {
+    /* Fondos */
     --fondoprincipal: #0f172a;
     --fondosecundario: #17233d;
+    /* Tipografía */
     --textoprincipal: #F8FAFC;
-    --textosecundario: #CBD5E1;
-    --azumagico: #38BDF8;
-    --azulbrilante: #60A5FA;
+    --textosecundario: #CFCFEA;
+    /* Tecnología */
+    --azumagico: #119DA4;
+    --azulbrillante: #0C7489;
+    /* Destacados */
     --doradorunico: #D4AF37;
+    --verdearbol: #214E34;
+    /*Talvez*/
+    --naranja: #F77F00;
+    /* Sombras e iluminación*/
+    --shadow-blue: rgba(17, 157, 164, .25);
+    --shadow-gold: rgba(212, 175, 55, .20);
+    --glass: rgba(23, 35, 61, .55);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--fondoprincipal);
+    background-image:
+        /*Iluminación superior*/
+        radial-gradient(circle at top left,
+            rgba(17, 157, 164, .08),
+            transparent 35%),
+        /*Iluminación inferior*/
+        radial-gradient(circle at bottom right,
+            rgba(12, 116, 137, .05),
+            transparent 40%),
+        /* Profundidad */
+        radial-gradient(circle at center,
+            rgba(255, 255, 255, .015),
+            transparent 70%);
+    background-attachment: fixed; /*Evito que el fondo se mueva con el contenido*/
+    /*Si decido cambiar un día a IMAGENES*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--textoprincipal);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle, 
+        rgba(255, 255, 255, .015) 1px, 
+        transparent 1px);
+    pointer-events: none; /* Evita que el pseudo-elemento capture los clics e interfiera con un posible boton*/
+    z-index: -1; /* Controla el orden de las capas -1 enviar detras de las demás*/
+}
+/*=====================================================================
+                    NAVBAR
+  =====================================================================*/
+.header-landing{
+    position: fixed; /*Decimos que se fije y no se mueva al hacer scroll*/
+    top: 1rem; /*Evitamos que toque el borde*/
+    left: 0; /*Le decimos que empiece desde el borde izquierdo*/
+    width: 100%; /*Le decimos que ocupe todo el ancho del navegador*/
+    z-index: 1000;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2.5rem;
+    border-radius: 999px;
+    background: var(--glass); /*Esta linea ya me da el color de la navbar*/
+    backdrop-filter: blur(12px); /*backdrop-fliter permite que lo que está detras del elemento se vea desenfocado*/
+    border: 1px solid rgba(255, 255, 255, .08); /*añadimos el borde*/
+    box-shadow: 0 8px 40px var(--shadow-blue); /*box-shadow(desplazamiento en x, desplazamiento en y, desenfoque, color)*/
+    transition: all .3s ease; /*anima los cambios de las propiedaddes para que ocurran de forma suave*/
+}
+.nav-cv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--textoprincipal);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.nav-cv:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-blue);
+}
+.nav-list{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-list img{
+    width: 32px;
+}
+.nav-list a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--textoprincipal);
+}
+.nav-list span{
+    display: none;
 }
