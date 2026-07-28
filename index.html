@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/9868a66798.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <title>Sneyder Rodriguez | Desarrollador Full-Stack Java</title>
 </head>
 
@@ -14,8 +20,8 @@
                         HEADER/NAVBAR
          ================================================================================= -->
     <header class="header-landing">
-        <nav class="navbar">
-            <a href="assets/CV/" class="nav-cv" download="">
+        <nav class="navbar" aria-label="Barra de navegación principal">
+            <a href="assets/CV/" class="nav-cv" download="" aria-label="Descargar Hoja de vida en PDF">
                 <span>Descargar CV</span>
             </a>
             <ul class="nav-list">
@@ -48,27 +54,34 @@
     </header>
 
     <main>
-        <!-- =================================================================================
-                                    HERO
-             ================================================================================= -->
+        <!-- ============================================================================
+                                            HERO
+             ============================================================================ -->
         <section id="hero">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1>Desarrollador Full-Stack Java</h1>
-                    <h2>Sneyder Rodriguez</h2>
+                    <h4>Sneyder Rodriguez</h4>
                     <a href="#contact" class="hero-cta">
-                        <img src="assets/Icons/Contacto.png" alt="Contacto">
+                        <img src="assets/Icons/contact.png" alt="Contacto">
                         <span>Contáctame</span>
                     </a>
-                    <div class="hero-scene">
-                        <!-- Elemento Protagonista -->
+                </div>
+                <div class="hero-scene">
+                    <div class="artifact-core">
+                        <div class="platform-top"></div>
+                        <div class="crystal crystal-top"></div>
+                        <div class="crystal crystal-glow"></div>
+                        <div class="crystal crystal-bottom"></div>
+                        <div class="artifact-ring"></div>
+                        <div class="platform-bottom"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- =================================================================================
-                                    ACERCA DE MÍ
-             ================================================================================= -->
+        <!-- ============================================================================
+                                        ACERCA DE MÍ
+             ============================================================================ -->
         <section id="about">
             <div class="about-container">
                 <header class="about-title">
@@ -86,9 +99,9 @@
                 </div>
             </div>
         </section>
-        <!-- =================================================================================
-                                    TECNOLOGÍAS
-             ================================================================================= -->
+        <!-- ============================================================================
+                                            TECNOLOGÍAS
+             ============================================================================ -->
         <section id="skills">
             <div class="skill-container">
                 <header class="skill-title">
@@ -122,9 +135,9 @@
                 </div>
             </div>
         </section>
-        <!-- =================================================================================
-                                    PROYECTOS
-             ================================================================================= -->
+        <!-- ============================================================================
+                                            PROYECTOS
+             ============================================================================ -->
         <section id="projects">
             <div class="project-container">
                 <header class="project-title">
@@ -192,6 +205,7 @@
             </div>
         </section>
     </main>
+
     <footer id="contact">
         <div class="footer-logo">
             <!-- logo -->
@@ -219,7 +233,6 @@
                 </li>
             </ul>
         </nav>
-
         <div class="footer-copy">
             <small>© 2026 Jimmyan Sneyder Rodríguez Delgadillo</small>
         </div>
