@@ -46,7 +46,8 @@ body {
         radial-gradient(circle at center,
             rgba(255, 255, 255, .015),
             transparent 70%);
-    background-attachment: fixed; /*Evito que el fondo se mueva con el contenido*/
+    background-attachment: fixed;
+    /*Evito que el fondo se mueva con el contenido*/
     /*Si decido cambiar un día a IMAGENES*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,23 +59,31 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(circle, 
-        rgba(255, 255, 255, .015) 1px, 
-        transparent 1px);
-    pointer-events: none; /* Evita que el pseudo-elemento capture los clics e interfiera con un posible boton*/
-    z-index: -1; /* Controla el orden de las capas -1 enviar detras de las demás*/
+        radial-gradient(circle,
+            rgba(255, 255, 255, .015) 1px,
+            transparent 1px);
+    pointer-events: none;
+    /* Evita que el pseudo-elemento capture los clics e interfiera con un posible boton*/
+    z-index: -1;
+    /* Controla el orden de las capas -1 enviar detras de las demás*/
 }
+
 /*=====================================================================
                                 NAVBAR
   =====================================================================*/
-.header-landing{
-    position: fixed; /*Decimos que se fije y no se mueva al hacer scroll*/
-    top: 1rem; /*Evitamos que toque el borde*/
-    left: 0; /*Le decimos que empiece desde el borde izquierdo*/
-    width: 100%; /*Le decimos que ocupe todo el ancho del navegador*/
+.header-landing {
+    position: fixed;
+    /*Decimos que se fije y no se mueva al hacer scroll*/
+    top: 1rem;
+    /*Evitamos que toque el borde*/
+    left: 0;
+    /*Le decimos que empiece desde el borde izquierdo*/
+    width: 100%;
+    /*Le decimos que ocupe todo el ancho del navegador*/
     z-index: 1000;
 }
-.navbar{
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,13 +92,19 @@ body::before {
     margin: auto;
     padding: 0 2.5rem;
     border-radius: 999px;
-    background: var(--glass); /*Esta linea ya me da el color de la navbar*/
-    backdrop-filter: blur(12px); /*backdrop-fliter permite que lo que está detras del elemento se vea desenfocado*/
-    border: 1px solid rgba(255, 255, 255, .08); /*añadimos el borde*/
-    box-shadow: 0 8px 40px var(--shadow-blue); /*box-shadow(desplazamiento en x, desplazamiento en y, desenfoque, color)*/
-    transition: .3s ease; /*anima los cambios de las propiedaddes para que ocurran de forma suave*/
+    background: var(--glass);
+    /*Esta linea ya me da el color de la navbar*/
+    backdrop-filter: blur(12px);
+    /*backdrop-fliter permite que lo que está detras del elemento se vea desenfocado*/
+    border: 1px solid rgba(255, 255, 255, .08);
+    /*añadimos el borde*/
+    box-shadow: 0 8px 40px var(--shadow-blue);
+    /*box-shadow(desplazamiento en x, desplazamiento en y, desenfoque, color)*/
+    transition: .3s ease;
+    /*anima los cambios de las propiedaddes para que ocurran de forma suave*/
 }
-.nav-cv{
+
+.nav-cv {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,15 +116,18 @@ body::before {
     cursor: pointer;
     transition: .3s ease;
 }
-.nav-list{
+
+.nav-list {
     display: flex;
     gap: 2rem;
     list-style: none;
 }
-.nav-list img{
+
+.nav-list img {
     width: 48px;
 }
-.nav-list a{
+
+.nav-list a {
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -119,37 +137,43 @@ body::before {
     border-radius: 50%;
     transition: .3s ease;
 }
+
 /*=====================================================================
                         ESTADOS DE LA NAVBAR
   =====================================================================*/
-.nav-cv:hover{
+.nav-cv:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px var(--shadow-blue);
 }
-.nav-list a:hover{
+
+.nav-list a:hover {
     background: rgba(17, 157, 164, .08);
     box-shadow: 0 0 18px var(--shadow-blue);
 }
-.nav-list span{
+
+.nav-list span {
     display: none;
 }
+
 /*=====================================================================
                         ACCESIBILIDAD NAVBAR
   =====================================================================*/
-.nav-list a:focus-visible, 
-.nav-cv:focus-visible{
+.nav-list a:focus-visible,
+.nav-cv:focus-visible {
     outline: 3px solid var(--doradorunico);
     outline-offset: 4px;
     border-radius: 50px;
 }
+
 /*=====================================================================
                                 HERO
   =====================================================================*/
-#hero{
+#hero {
     min-height: 100vh;
     /* padding-top: 7rem; */
 }
-.hero-container{
+
+.hero-container {
     max-width: 1200px;
     min-height: 100vh;
     margin: 0 auto;
@@ -158,21 +182,25 @@ body::before {
     align-items: center;
     justify-content: space-between;
 }
-.hero-content{
+
+.hero-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
-.hero-content h1{
+
+.hero-content h1 {
     font-family: var(--font-title);
-    font-size: clamp(3rem, 5vw, 4.5rem); /*clamp(mínimo, ideal, máximo)*/
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    /*clamp(mínimo, ideal, máximo)*/
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -.03em;
 }
-.hero-content h4{
+
+.hero-content h4 {
     font-family: var(--font-text);
     font-size: 1.15rem;
     font-weight: 500;
@@ -180,7 +208,8 @@ body::before {
     letter-spacing: .08em;
     text-transform: uppercase;
 }
-.hero-cta{
+
+.hero-cta {
     display: inline-flex;
     align-items: center;
     gap: .9rem;
@@ -196,24 +225,28 @@ body::before {
     border-radius: 999px;
     box-shadow: 0 8px 24px var(--shadow-blue);
     cursor: pointer;
-    transition: 
-    background .3s ease,
-    border-color .3s ease,
-    box-shadow .3s ease;
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
-.hero-cta img{
+
+.hero-cta img {
     width: 28px;
 }
-.hero-content h1{
+
+.hero-content h1 {
     margin-bottom: .8rem;
 }
-.hero-content h4{
-    margin-bottom: clamp(3rem,6vw,8rem);
+
+.hero-content h4 {
+    margin-bottom: clamp(3rem, 6vw, 8rem);
 }
+
 /*=====================================================================
                                 HERO SCENE
   =====================================================================*/
-.hero-scene{
+.hero-scene {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -221,57 +254,61 @@ body::before {
     position: relative;
     min-height: 650px;
 }
-.artifact-core{
+
+.artifact-core {
     position: relative;
     width: 260px;
     height: 420px;
 }
+
 .platform-top,
-.platform-bottom{
+.platform-bottom {
     position: absolute;
     left: 50%;
     width: 120px;
     height: 2px;
     transform: translateX(-50%);
 }
-.platform-top{
+
+.platform-top {
     top: 0;
 }
-.platform-bottom{
+
+.platform-bottom {
     bottom: 0;
 }
-.crystal{
+
+.crystal {
     position: absolute;
     left: 50%;
     width: 65px;
     height: 150px;
     transform: translateX(-50%);
-    clip-path: polygon(
-        50% 0%,
-        82% 18%,
-        82% 72%,
-        50% 100%,
-        18% 72%,
-        18% 18%
-    );
-    background: linear-gradient(
-        180deg,
-        rgba(255,255,255,.95) 0%,
-        rgba(180,235,255,.85) 35%,
-        rgba(17,157,164,.55) 70%,
-        rgba(12,116,137,.75) 100%
-        );
-    border: 1px solid rgba(255, 255, 255,.35);
+    clip-path: polygon(50% 0%,
+            82% 18%,
+            82% 72%,
+            50% 100%,
+            18% 72%,
+            18% 18%);
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .95) 0%,
+            rgba(180, 235, 255, .85) 35%,
+            rgba(17, 157, 164, .55) 70%,
+            rgba(12, 116, 137, .75) 100%);
+    border: 1px solid rgba(255, 255, 255, .35);
     box-shadow: inset 0 0 18px rgba(255, 255, 255, .18),
-    0 0 15px rgba(17, 157, 164, .15);
+        0 0 15px rgba(17, 157, 164, .15);
 }
-.crystal-top{
+
+.crystal-top {
     top: 70px;
 }
-.crystal-bottom{
+
+.crystal-bottom {
     bottom: 70px;
 }
-.crystal-glow{
+
+.crystal-glow {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -279,26 +316,46 @@ body::before {
     height: 40px;
     transform: translate(-50%, -50%);
 }
-.artifact-ring{
+
+.crystal-center-line{
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    width: 1px;
+    height: 84%;
+    transform: translateX(-50%);
+}
+
+.artifact-ring {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 180px;
     height: 70px;
-    transform: translate(-50%, -50%) 
-    rotate(-18deg);
+    transform: translate(-50%, -50%) rotate(-18deg);
 }
+
 /*=====================================================================
                                 ESTADOS DE CRYSTAL
   =====================================================================*/
-.crystal::before{
+/* .crystal::before {
     content: "";
     position: absolute;
-    top: 8%;
-    left: 18%;
-    width: 18%;
-    height: 70%;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, .35);
-    filter: blur(12px);
+    inset: 0;
+    clip-path: polygon(50% 0% 18% 18% 18% 72% 50% 100%);
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .35),
+            rgba(255, 255, 255, .08));
+    opacity: .8;
 }
+
+.crystal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(50% 0% 18% 18% 18% 72% 50% 100%);
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .08),
+            rgba(255, 255, 255, .18));
+    opacity: .7;
+} */
