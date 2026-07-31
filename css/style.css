@@ -21,7 +21,6 @@
     --font-title: "Sora", sans-serif;
     --font-text: "Inter" sans-serif;
 }
-
 *,
 *::before,
 *::after {
@@ -29,7 +28,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     min-height: 100vh;
     background-color: var(--fondoprincipal);
@@ -53,7 +51,6 @@ body {
     background-size: cover;
     color: var(--textoprincipal);
 }
-
 body::before {
     content: "";
     position: fixed;
@@ -67,7 +64,6 @@ body::before {
     z-index: -1;
     /* Controla el orden de las capas -1 enviar detras de las demás*/
 }
-
 /*=====================================================================
                                 NAVBAR
   =====================================================================*/
@@ -82,7 +78,6 @@ body::before {
     /*Le decimos que ocupe todo el ancho del navegador*/
     z-index: 1000;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -103,7 +98,6 @@ body::before {
     transition: .3s ease;
     /*anima los cambios de las propiedaddes para que ocurran de forma suave*/
 }
-
 .nav-cv {
     display: flex;
     align-items: center;
@@ -116,17 +110,14 @@ body::before {
     cursor: pointer;
     transition: .3s ease;
 }
-
 .nav-list {
     display: flex;
     gap: 2rem;
     list-style: none;
 }
-
 .nav-list img {
     width: 48px;
 }
-
 .nav-list a {
     display: flex;
     align-items: center;
@@ -137,7 +128,6 @@ body::before {
     border-radius: 50%;
     transition: .3s ease;
 }
-
 /*=====================================================================
                         ESTADOS DE LA NAVBAR
   =====================================================================*/
@@ -145,16 +135,13 @@ body::before {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px var(--shadow-blue);
 }
-
 .nav-list a:hover {
     background: rgba(17, 157, 164, .08);
     box-shadow: 0 0 18px var(--shadow-blue);
 }
-
 .nav-list span {
     display: none;
 }
-
 /*=====================================================================
                         ACCESIBILIDAD NAVBAR
   =====================================================================*/
@@ -164,83 +151,6 @@ body::before {
     outline-offset: 4px;
     border-radius: 50px;
 }
-
 /*=====================================================================
-                                HERO
+                                ACERCA DE MÍ
   =====================================================================*/
-#hero {
-    min-height: 100vh;
-    /* padding-top: 7rem; */
-}
-
-.hero-container {
-    max-width: 1200px;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr 520px;
-    align-items: center;
-    gap: 3rem;
-}
-
-.hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 620px;
-}
-
-.hero-content h1 {
-    font-family: var(--font-title);
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    /*clamp(mínimo, ideal, máximo)*/
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -.03em;
-}
-
-.hero-content h4 {
-    font-family: var(--font-text);
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: var(--textosecundario);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
-
-.hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: .9rem;
-    padding: 1rem 1.8rem;
-    text-decoration: none;
-    font-family: var(--font-text);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--textoprincipal);
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, .08);
-    border-radius: 999px;
-    box-shadow: 0 8px 24px var(--shadow-blue);
-    cursor: pointer;
-    transition:
-        background .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-}
-
-.hero-cta img {
-    width: 28px;
-}
-
-.hero-content h1 {
-    margin-bottom: .8rem;
-}
-
-.hero-content h4 {
-    margin-bottom: clamp(3rem, 6vw, 8rem);
-}
