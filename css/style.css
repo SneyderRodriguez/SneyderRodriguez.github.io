@@ -178,9 +178,10 @@ body::before {
     min-height: 100vh;
     margin: 0 auto;
     padding: 0 2.5rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 520px;
     align-items: center;
-    justify-content: space-between;
+    gap: 3rem;
 }
 
 .hero-content {
@@ -189,6 +190,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    max-width: 620px;
 }
 
 .hero-content h1 {
