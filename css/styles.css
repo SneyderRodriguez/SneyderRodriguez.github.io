@@ -54,3 +54,18 @@
 .decagon img{
     width:78px;
 }
+.decagon-id{
+    width:42px;
+    height:26px;
+    margin:auto;
+    margin-top:-4px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:var(--font-skill);
+    font-size:.9rem;
+    color:var(--doradorunico);
+    border:2px solid var(--doradorunico);
+    border-radius:6px;
+    background:var(--fondoprincipal);
+}
