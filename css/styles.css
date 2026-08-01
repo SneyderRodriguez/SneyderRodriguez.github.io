@@ -1,0 +1,56 @@
+/*=====================================================================
+                            HABILIDADES
+  =====================================================================*/
+#skills{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:8rem 2.5rem;
+}
+.skill-container{
+    width:100%;
+    max-width:1200px;
+}
+.skill-title{
+    margin-bottom:4rem;
+}
+.skill-title h2{
+    font-family:var(--font-title);
+    font-size:clamp(2.2rem,4vw,3.5rem);
+    color:var(--textoprincipal);
+}
+.skill-tree{
+    position:relative;
+    width:700px;
+    height:700px;
+    margin:auto;
+}
+.decagon{
+    width:150px;
+    aspect-ratio:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--glass);
+    border:3px solid var(--doradorunico);
+    clip-path:polygon(
+        50% 0%,
+        79% 10%,
+        97% 35%,
+        97% 65%,
+        79% 90%,
+        50% 100%,
+        21% 90%,
+        3% 65%,
+        3% 35%,
+        21% 10%
+    );
+    backdrop-filter:blur(12px);
+    box-shadow:
+        0 0 18px var(--shadow-gold),
+        inset 0 0 12px rgba(255,255,255,.04);
+}
+.decagon img{
+    width:78px;
+}

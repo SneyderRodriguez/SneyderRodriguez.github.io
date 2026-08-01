@@ -152,52 +152,157 @@ body::before {
     border-radius: 50px;
 }
 /*=====================================================================
-                                ACERCA DE MÍ
+                                HERO
   =====================================================================*/
-#about{
+#hero {
     min-height: 100vh;
+    /* padding-top: 7rem; */
 }
-.about-container{
-    max-width: 1200px; 
+.hero-container {
+    max-width: 1200px;
     min-height: 100vh;
     margin: 0 auto;
     padding: 0 2.5rem;
-    gap: 3rem; 
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    align-items: center;
+    gap: 3rem;
+}
+.hero-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    max-width: 620px;
 }
-.about-title{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-.about-title h2{
+.hero-content h1 {
     font-family: var(--font-title);
-    font-size: clamp(1rem, 4vw, 2.5rem);/*clamp(mínimo, ideal, máximo)*/
+    font-size: clamp(3rem, 5vw, 4.5rem);/*clamp(mínimo, ideal, máximo)*/
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -.03em;
-    margin-bottom: 1%;
 }
-.about-title p{
+.hero-content h4 {
     font-family: var(--font-text);
-    font-size: .75rem;
+    font-size: 1.15rem;
     font-weight: 500;
     color: var(--textosecundario);
     letter-spacing: .08em;
     text-transform: uppercase;
-    display: grid;
-    grid-template-columns: 1fr 820px;
+}
+.hero-cta {
+    display: inline-flex;
     align-items: center;
+    gap: .9rem;
+    padding: 1rem 1.8rem;
+    text-decoration: none;
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--textoprincipal);
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 999px;
+    box-shadow: 0 8px 24px var(--shadow-blue);
+    cursor: pointer;
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+.hero-cta img {
+    width: 28px;
+}
+.hero-content h1 {
+    margin-bottom: .8rem;
+}
+.hero-content h4 {
+    margin-bottom: clamp(3rem, 6vw, 8rem);
+}
+/*=====================================================================
+                                ACERCA DE MÍ
+  =====================================================================*/
+#about{
+    padding:8rem 2.5rem;
+}
+.about-container{
+    max-width:1200px;
+    margin:auto;
+}
+.about-title{
+    width:fit-content;
+    margin-left:auto;
+    margin-bottom:3rem;
+}
+.about-title h2{
+    font-family:var(--font-title);
+    font-size:clamp(2.4rem,4vw,3.4rem);
+    color:var(--textoprincipal);
+    margin-bottom:.8rem;
+}
+.about-phrase{
+    width:430px;
+    text-align:right;
+    font-family:var(--font-text);
+    color:var(--textosecundario);
+    line-height:1.6;
+}
+.about-body{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:3rem;
+    align-items:center;
+}
+.imagen{
+    display:flex;
+    justify-content:center;
+    transform: translateY(-95px);
+}
+.photo{
+    width:290px;
+    max-width:100%;
+    opacity:.65;
+    filter:
+        grayscale(100%)
+        brightness(1.25)
+        contrast(.75);
+    transition:.35s ease;
+}
+.about-content{
+    max-width:700px;
 }
 .about-content p{
-    text-align: justify;
-    font-family: var(--font-text);
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-family:var(--font-text);
+    color:var(--textosecundario);
+    font-size:1.08rem;
+    line-height:2;
+    margin-bottom:1rem;
+}
+.about-content p:first-child{
+    color:var(--textoprincipal);
+    font-weight:600;
+    font-size:1.18rem;
+}
+/*=====================================================================
+                        ESTADOS DEL ACERCA DE MÍ
+  =====================================================================*/
+.photo:hover{
+    opacity:.9;
+    transform:translateY(-4px);
+}
+.about-title h2::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:3px;
+    margin-top:12px;
+    margin-left:auto;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        var(--azumagico),
+        transparent
+    );
 }
