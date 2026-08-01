@@ -32,8 +32,9 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    background:var(--glass);
-    border:3px solid var(--doradorunico);
+    background: transparent;
+    border: 3px solid var(--doradorunico);
+    box-shadow: 0 0 10px rgba(212,175,55,.15);
     clip-path:polygon(
         50% 0%,
         79% 10%,
@@ -46,10 +47,6 @@
         3% 35%,
         21% 10%
     );
-    backdrop-filter:blur(12px);
-    box-shadow:
-        0 0 18px var(--shadow-gold),
-        inset 0 0 12px rgba(255,255,255,.04);
 }
 .decagon img{
     width:78px;
@@ -68,4 +65,36 @@
     border:2px solid var(--doradorunico);
     border-radius:6px;
     background:var(--fondoprincipal);
+}
+.circle{
+    width:88px;
+    aspect-ratio:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:var(--glass);
+    border:2px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,.03),
+        0 0 14px rgba(0,0,0,.4);
+}
+.circle img{
+    width:46px;
+}
+.circle-id{
+    width:42px;
+    height:24px;
+    margin:auto;
+    margin-top:-3px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--fondoprincipal);
+    border:2px solid var(--doradorunico);
+    border-radius:5px;
+    color:var(--doradorunico);
+    font-size:.85rem;
+    font-family:var(--font-title);
 }
