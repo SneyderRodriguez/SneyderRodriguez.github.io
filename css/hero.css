@@ -1,3 +1,12 @@
+:root {
+  /* Colores de la pieza */
+  --core-active: #38bdf8;
+  --core-fault: #f59e0b;
+  --core-offline: #334155;
+  --halo-glow: rgba(56, 189, 248, 0.15);
+  /* Transiciones */
+  --transition-state: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 /*=====================================================================
                                 HERO
   =====================================================================*/
@@ -25,7 +34,7 @@
 }
 .hero-content h1 {
     font-family: var(--font-title);
-    font-size: clamp(3rem, 5vw, 4.5rem);/*clamp(mínimo, ideal, máximo)*/
+    font-size: clamp(3rem, 5vw, 4.5rem);
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -.03em;
@@ -68,224 +77,184 @@
 .hero-content h4 {
     margin-bottom: clamp(3rem, 6vw, 8rem);
 }
+/*=====================================================================
+                            PIEZA CENTRAL
+  =====================================================================*/
 .artifact-container {
   position: relative;
-  width: 240px;
-  height: 240px;
+  width: 320px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  user-select: none;
-  pointer-events: none;
-  transform: translate(-50px, 20px);
+  cursor: pointer;
 }
-.core-wrapper {
+.artifact {
   position: relative;
-  width: 36px;
-  height: 36px;
+  width: 180px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.core-center {
-  width: 14px;
-  height: 14px;
-  background: radial-gradient(circle, #ffffff 10%, var(--color-tech-main) 70%, var(--color-tech-dark) 100%);
-  border-radius: 50%;
-  box-shadow: 
-    0 0 12px var(--color-tech-main),
-    0 0 24px rgba(17, 157, 164, 0.6),
-    0 0 3px var(--color-gold-detail);
-  animation: coreBreathing 4s ease-in-out infinite;
-}
-.core-outer-ring {
+.artifact-core {
   position: absolute;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(17, 157, 164, 0.4);
   border-radius: 50%;
-  box-shadow: inset 0 0 8px rgba(17, 157, 164, 0.2);
-  animation: ringPulse 4s ease-in-out infinite;
-}
-.core-pulse-ring {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--color-tech-main);
-  border-radius: 50%;
-  opacity: 0;
-  animation: pulseWave 6s ease-out infinite;
-}
-.fragment {
-  position: absolute;
-  background: var(--color-glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--color-glass-border);
+  background: var(--core-active);
   box-shadow: 
-    inset 0 0 10px rgba(17, 157, 164, 0.15),
-    0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    0 0 20px var(--core-active),
+    0 0 40px var(--core-active);
+  transition: var(--transition-state);
+  z-index: 3;
 }
-.frag-top {
-  width: 75px;
-  height: 45px;
-  top: 55px;
-  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 80%);
-  animation: floatTop 6s ease-in-out infinite;
-}
-.frag-bottom {
-  width: 80px;
-  height: 40px;
-  bottom: 55px;
-  clip-path: polygon(0% 20%, 100% 0%, 80% 100%, 20% 100%);
-  animation: floatBottom 6s ease-in-out infinite;
-}
-.frag-left {
-  width: 45px;
-  height: 80px;
-  left: 55px;
-  clip-path: polygon(0% 15%, 100% 0%, 80% 85%, 0% 100%);
-  animation: floatLeft 6s ease-in-out infinite;
-}
-.frag-right {
-  width: 40px;
-  height: 85px;
-  right: 55px;
-  clip-path: polygon(15% 0%, 100% 20%, 80% 100%, 0% 80%);
-  animation: floatRight 6s ease-in-out infinite;
-}
-.frag-accent-1 {
-  width: 20px;
-  height: 20px;
-  top: 90px;
-  right: 95px;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation: floatAccent1 6s ease-in-out infinite;
-}
-
-.frag-accent-2 {
-  width: 16px;
-  height: 16px;
-  bottom: 95px;
-  left: 90px;
-  background: rgba(17, 157, 164, 0.08);
-  border: 1px solid rgba(17, 157, 164, 0.3);
-  clip-path: polygon(30% 0%, 100% 30%, 70% 100%, 0% 70%);
-  animation: floatAccent2 6s ease-in-out infinite;
-}
-.energy-particle {
+.artifact-ring {
   position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 6px var(--color-tech-main);
-  opacity: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top-color: rgba(56, 189, 248, 0.6);
+  border-bottom-color: rgba(56, 189, 248, 0.2);
+  transition: var(--transition-state);
 }
-
-.p-1 { left: 155px; bottom: 150px; animation: particleAscend 4s infinite 0.2s; }
-.p-2 { left: 165px; bottom: 145px; animation: particleAscend 3.5s infinite 1.2s; }
-.p-3 { left: 150px; bottom: 155px; animation: particleAscend 4.5s infinite 2.1s; }
-.p-4 { left: 162px; bottom: 160px; animation: particleAscend 3.8s infinite 0.7s; }
-
-.sparkle {
+.ring-outer {
+  width: 160px;
+  height: 160px;
+  animation: rotateOuter 16s linear infinite;
+}
+.ring-inner {
+  width: 100px;
+  height: 100px;
+  border-left-color: rgba(56, 189, 248, 0.5);
+  animation: rotateInner 12s linear infinite reverse;
+}
+.artifact-arm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.artifact-arm::before,
+.artifact-arm::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+.arm-1::before { top: 15px; left: 50%; width: 2px; height: 12px; transform: translateX(-50%); }
+.arm-1::after { bottom: 15px; left: 50%; width: 2px; height: 12px; transform: translateX(-50%); }
+.arm-2 { transform: rotate(90deg); }
+.artifact-halo {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--halo-glow) 0%, transparent 70%);
+  filter: blur(10px);
+  transition: var(--transition-state);
+  z-index: 1;
+}
+.sparks-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.spark {
   position: absolute;
   width: 3px;
   height: 3px;
-  background: var(--color-gold-detail);
+  background-color: var(--core-fault);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--color-gold-detail);
+  opacity: 0;
+  box-shadow: 0 0 6px var(--core-fault);
+}
+
+/* =====================================================================
+                              ANIMACIONES
+   =====================================================================*/
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+@keyframes rotateOuter {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateInner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.95); }
+}
+
+@keyframes microVibration {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-1.5px, 1px); }
+  75% { transform: translate(1.5px, -1px); }
+}
+
+@keyframes sparkEmit {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.2); }
+}
+/* =====================================================================
+                            CONTROLADOS POR JS
+   =====================================================================*/
+.state-active .artifact {
+  animation: floatAnimation 9s ease-in-out infinite;
+}
+.state-active .artifact-core {
+  background: var(--core-active);
+  box-shadow: 0 0 20px var(--core-active), 0 0 40px var(--core-active);
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+.state-fault .artifact {
+  animation: microVibration 0.15s ease-in-out infinite;
+}
+.state-fault .artifact-core {
+  background: var(--core-fault);
+  box-shadow: 0 0 12px var(--core-fault);
+  opacity: 0.6;
+}
+.state-fault .ring-outer,
+.state-fault .ring-inner {
+  animation-play-state: paused;
+}
+.state-offline .artifact {
+  animation: none;
+  transform: translateY(18px) rotate(-4deg);
+}
+.state-offline .artifact-core {
+  background: var(--core-offline);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
+  opacity: 0.25;
+  animation: none;
+}
+.state-offline .artifact-halo {
   opacity: 0;
 }
-
-.spark-1 { top: 130px; left: 140px; animation: sparkGlimmer 7s infinite 1s; }
-.spark-2 { bottom: 125px; right: 135px; animation: sparkGlimmer 8s infinite 3.5s; }
-.spark-3 { top: 120px; right: 145px; animation: sparkGlimmer 6.5s infinite 5s; }
-
-@keyframes coreBreathing {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 
-      0 0 10px var(--color-tech-main),
-      0 0 20px rgba(17, 157, 164, 0.5),
-      0 0 2px var(--color-gold-detail);
-  }
-  50% {
-    transform: scale(1.18);
-    box-shadow: 
-      0 0 18px var(--color-tech-main),
-      0 0 32px rgba(17, 157, 164, 0.8),
-      0 0 6px var(--color-gold-detail);
-  }
+.state-offline .ring-outer,
+.state-offline .ring-inner {
+  animation-play-state: paused;
+  border-top-color: rgba(255, 255, 255, 0.05);
 }
-
-@keyframes ringPulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.08); opacity: 0.9; }
+.state-recharging .artifact {
+  transition: transform 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translateY(0px) rotate(0deg);
 }
-
-@keyframes pulseWave {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  40% { transform: scale(3.5); opacity: 0; }
-  100% { transform: scale(3.5); opacity: 0; }
+.state-recharging .artifact-core {
+  background: var(--core-active);
+  box-shadow: 0 0 30px var(--core-active), 0 0 60px var(--core-active);
+  transition: all 1.5s ease;
 }
-
-@keyframes floatTop {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}
-
-@keyframes floatBottom {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(5px); }
-}
-
-@keyframes floatLeft {
-  0%, 100% { transform: translateX(0px); }
-  50% { transform: translateX(-5px); }
-}
-
-@keyframes floatRight {
-  0%, 100% { transform: translateX(0px); }
-  50% { transform: translateX(5px); }
-}
-
-@keyframes floatAccent1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(3px, -3px); }
-}
-
-@keyframes floatAccent2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-3px, 3px); }
-}
-@keyframes particleAscend {
-  0% {
-    transform: translateY(0) scale(0.8);
-    opacity: 0;
-  }
-  30% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-35px) scale(0.2);
-    opacity: 0;
-  }
-}
-
-@keyframes sparkGlimmer {
-  0%, 92%, 100% { opacity: 0; transform: scale(0.5); }
-  95% { opacity: 0.9; transform: scale(1.4); }
-}
-
-@media (min-width: 768px) {
-  .artifact-container {
-    width: 320px;
-    height: 320px;
-  }
+.state-recharging .artifact-halo {
+  opacity: 1;
+  transition: opacity 1.5s ease;
 }

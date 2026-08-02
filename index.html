@@ -11,7 +11,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -70,27 +69,17 @@
                         <span>Contáctame</span>
                     </a>
                 </header>
-                <div class="artifact-container">
-                    <div class="sparkle spark-1"></div>
-                    <div class="sparkle spark-2"></div>
-                    <div class="sparkle spark-3"></div>
-                    <div class="fragment frag-top"></div>
-                    <div class="fragment frag-bottom"></div>
-                    <div class="fragment frag-left"></div>
-                    <div class="fragment frag-right"></div>
-                    <div class="fragment frag-accent-1"></div>
-                    <div class="fragment frag-accent-2"></div>
-                    <div class="energy-particle p-1"></div>
-                    <div class="energy-particle p-2"></div>
-                    <div class="energy-particle p-3"></div>
-                    <div class="energy-particle p-4"></div>
-                    <div class="core-wrapper">
-                        <div class="core-outer-ring"></div>
-                        <div class="core-pulse-ring"></div>
-                        <div class="core-center"></div>
-                    </div>
-                </div>
-            </div>
+                <div class="artifact-container" id="artifactContainer">
+                    <div class="artifact-halo"></div>
+      <div class="artifact" id="artifact">
+        <div class="artifact-ring ring-outer"></div>
+        <div class="artifact-ring ring-inner"></div>
+        <div class="artifact-arm arm-1"></div>
+        <div class="artifact-arm arm-2"></div>
+        <div class="artifact-core"></div>
+      </div>
+      <div class="sparks-container" id="sparksContainer"></div>
+    </div>
             </div>
         </section>
         <!-- ============================================================================
@@ -100,8 +89,7 @@
             <div class="about-container">
                 <header class="about-title">
                     <h2>Acerca de mí</h2>
-                    <p class="about-phrase">Inspirado por la lógica del hardware,
-                        apasionado por el arte de programar</p>
+                    <p class="about-phrase">Una simple falla de hardware despertó mi curiosidad; la programación hizo el resto.</p>
                 </header>
                 <div class="about-body">
                     <figure class="imagen">
@@ -127,32 +115,30 @@
                     <h2>Habilidades</h2>
                 </header>
                 <div class="skill-tree">
-                    <div class="line-orb-1"></div>
-                    <div class="line-orb-2"></div>
+                    <img src="assets/Icons/estructura_skill.svg" alt="árbol de abilidades" class="tree">
                     <div class="skill-center">
-                            <img src="assets/Imagenes/uniremington.png" alt="logo Uniremington" class="decagon-I">
+                            <img src="assets/Imagenes/uniremington.png" alt="logo Uniremington">
                     </div>
                     <div class="skill-java">
-                            <img src="assets/Imagenes/java.png" alt="logo Java" class="node-II">
+                            <img src="assets/Imagenes/java.png" alt="logo Java">
                     </div>
                     <div class="skill-postgresql">
-                            <img src="assets/Imagenes/postgresql.png" alt="logo PostreSQL" class="node-III">
+                            <img src="assets/Imagenes/postgresql.png" alt="logo PostreSQL">
                     </div>
                     <div class="skill-nodejs">
-                            <img src="assets/Imagenes/nodejs.png" alt="logo Node.js" class="node-IV">
+                            <img src="assets/Imagenes/nodejs.png" alt="logo Node.js">
                     </div>
                     <div class="skill-js">
-                            <img src="assets/Imagenes/javascript.png" alt="logo JavaScript" class="node-V">
+                            <img src="assets/Imagenes/javascript.png" alt="logo JavaScript">
                     </div>
                     <div class="skill-html">
-                            <img src="assets/Imagenes/html.png" alt="logo HTML" class="node-VI">
+                            <img src="assets/Imagenes/html.png" alt="logo HTML">
                     </div>
                     <div class="skill-css">
-                            <img src="assets/Imagenes/css.png" alt="logo CSS" class="node-VII">
+                            <img src="assets/Imagenes/css.png" alt="logo CSS">
                     </div>
                     <div class="skill-future">
                         <!-- img? -->
-                        <div class="circle"></div>
                     </div>
                 </div>
             </div>
@@ -260,5 +246,5 @@
         </div>
     </footer>
 </body>
-
+<script src="app.js"></script>
 </html>

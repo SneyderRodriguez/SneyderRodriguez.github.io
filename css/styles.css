@@ -1,0 +1,21 @@
+/*=====================================================================
+                            HABILIDADES TÉCNICAS
+  =====================================================================*/
+#skills{
+    padding:8rem 2.5rem;
+}
+.skill-container{
+    max-width:1200px;
+    margin:auto;
+}
+.skill-title{
+    width:fit-content;
+    margin-right:auto;
+    margin-bottom:3rem;
+}
+.skill-title h2{
+    font-family:var(--font-title);
+    font-size:clamp(2.4rem,4vw,3.4rem);
+    color:var(--textoprincipal);
+    margin-bottom:.8rem;
+}
