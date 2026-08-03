@@ -494,16 +494,19 @@ body::before {
 
 .project-navigation {
     position: absolute;
-    bottom: -50px;
+    top: 0px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
     display: flex;
+    justify-content:space-between;
     align-items: center;
     gap: 20px;
+    pointer-events:none;
     z-index: 10;
 }
 
 .control-btn {
+    pointer-events:auto;
     background: var(--glass);
     border: 1px solid var(--azumagico);
     color: var(--textoprincipal);
@@ -517,7 +520,13 @@ body::before {
     transition: all 0.3s ease;
     box-shadow: 0 0 10px var(--shadow-blue);
 }
+#prev-btn{
+    margin-left:-95px;
+}
 
+#next-btn{
+    margin-right:-95px;
+}
 .control-btn:hover {
     background: var(--fondosecundario);
 
