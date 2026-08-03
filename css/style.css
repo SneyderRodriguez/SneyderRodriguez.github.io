@@ -170,100 +170,6 @@ body::before {
 }
 
 /*=====================================================================
-                                ACERCA DE MÍ
-  =====================================================================*/
-#about {
-    padding: 8rem 2.5rem;
-}
-
-.about-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.about-title {
-    width: fit-content;
-    margin-left: auto;
-    margin-bottom: 3rem;
-}
-
-.about-title h2 {
-    font-family: var(--font-title);
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
-    color: var(--textoprincipal);
-    margin-bottom: .8rem;
-}
-
-.about-phrase {
-    width: 430px;
-    text-align: right;
-    font-family: var(--font-text);
-    color: var(--textosecundario);
-    line-height: 1.6;
-}
-
-.about-body {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.imagen {
-    display: flex;
-    justify-content: center;
-    transform: translateY(-95px);
-}
-
-.photo {
-    width: 290px;
-    max-width: 100%;
-    opacity: .65;
-    filter:
-        grayscale(100%) brightness(1.25) contrast(.75);
-    transition: .35s ease;
-}
-
-.about-content {
-    max-width: 700px;
-}
-
-.about-content p {
-    font-family: var(--font-text);
-    color: var(--textosecundario);
-    font-size: 1.08rem;
-    line-height: 2;
-    margin-bottom: 1rem;
-}
-
-.about-content p:first-child {
-    color: var(--textoprincipal);
-    font-weight: 600;
-    font-size: 1.18rem;
-}
-
-/*=====================================================================
-                        ESTADOS DEL ACERCA DE MÍ
-  =====================================================================*/
-.photo:hover {
-    opacity: .9;
-    transform: translateY(-4px);
-}
-
-.about-title h2::after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 3px;
-    margin-top: 12px;
-    margin-left: auto;
-    border-radius: 999px;
-    background: linear-gradient(90deg,
-            var(--azumagico),
-            transparent);
-}
-
-/*=====================================================================
                                 PROYECTOS
   =====================================================================*/
 #projects {
@@ -297,7 +203,7 @@ body::before {
     justify-content: center;
     align-items: center;
     touch-action: none;
-    transform: translate(-125px,-65px);
+    transform: translate(-125px, -65px);
     /* Prevent default touch actions */
 }
 
@@ -498,15 +404,15 @@ body::before {
     left: 50%;
     transform: translateY(-50%);
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
-    pointer-events:none;
+    pointer-events: none;
     z-index: 10;
 }
 
 .control-btn {
-    pointer-events:auto;
+    pointer-events: auto;
     background: var(--glass);
     border: 1px solid var(--azumagico);
     color: var(--textoprincipal);
@@ -520,13 +426,15 @@ body::before {
     transition: all 0.3s ease;
     box-shadow: 0 0 10px var(--shadow-blue);
 }
-#prev-btn{
-    margin-left:-95px;
+
+#prev-btn {
+    margin-left: -95px;
 }
 
-#next-btn{
-    margin-right:-95px;
+#next-btn {
+    margin-right: -95px;
 }
+
 .control-btn:hover {
     background: var(--fondosecundario);
 
