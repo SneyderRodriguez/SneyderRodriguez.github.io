@@ -492,7 +492,7 @@ body::before {
     opacity: 1;
 }
 
-.carousel-controls {
+.project-navigation {
     position: absolute;
     bottom: -50px;
     left: 50%;
