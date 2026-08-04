@@ -2,16 +2,16 @@
                             HABILIDADES TÉCNICAS
   =====================================================================*/
 #skills{
-    min-height:auto;
-    padding: 4rem 0;
-    display:flex;
-    align-items:center;
+min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    display: block;
 }
 .skill-container{
     width:100%;
     max-width:1200px;
     margin:auto;
-    padding:2rem 5rem;
+    padding:0 2.5rem;
 }
 .skill-title{
     width:fit-content;
@@ -26,9 +26,9 @@
     position:relative;
     width:650px;
     aspect-ratio:1;
-    margin:0 auto;
+    margin: 0 auto -100px;
     transform:scale(.7);
-    transform-origin:center center;
+    transform-origin:center top;
     margin-left:auto;
     animation:treeBreathing 10s ease-in-out infinite;
 }
