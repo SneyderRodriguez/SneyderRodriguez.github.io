@@ -25,7 +25,12 @@
     --card-height: 350px;
     --transition-speed: 0.5s;
 }
-
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 100px;
+}
 *,
 *::before,
 *::after {
@@ -175,16 +180,20 @@ body::before {
 #projects {
     min-height: auto;
     padding-bottom: 4rem;
+    scroll-margin-top: 100px;
 }
 
 .projects-wrapper {
-    position: relative
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
 }
 
 .project-title {
     width: fit-content;
     margin-left: auto;
-    margin-top: 0px;
+    margin-top: 3.5rem;
     margin-bottom: 1rem;
 }
 
@@ -456,8 +465,6 @@ body::before {
         opacity: 1;
     }
 }
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     :root {
         --card-width: 250px;

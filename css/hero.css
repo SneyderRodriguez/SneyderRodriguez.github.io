@@ -7,24 +7,17 @@
   /* Transiciones */
   --transition-state: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-html {
-  scroll-behavior: smooth;
-}
-section {
-  scroll-margin-top: 100px;
-}
 /*=====================================================================
                                 HERO
   =====================================================================*/
-/* #hero {
-  min-height: 100vh;
+  #hero {
   padding-top: 7rem;
-} */
+}
 .hero-container {
   max-width: 1200px;
-  min-height: 100vh;
+  min-height: 80vh;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 2.5rem 2rem;
   display: grid;
   grid-template-columns: 1fr 520px;
   align-items: center;
@@ -359,7 +352,7 @@ section {
                                 ACERCA DE MÍ
   =====================================================================*/
 #about {
-  padding: 5rem 2.5rem;
+  padding: 2rem 2.5rem 4rem;
 }
 
 .about-container {
