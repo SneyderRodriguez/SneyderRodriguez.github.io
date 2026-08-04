@@ -7,6 +7,12 @@
   /* Transiciones */
   --transition-state: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 100px;
+}
 /*=====================================================================
                                 HERO
   =====================================================================*/
@@ -353,7 +359,7 @@
                                 ACERCA DE MÍ
   =====================================================================*/
 #about {
-  padding: 8rem 2.5rem;
+  padding: 5rem 2.5rem;
 }
 
 .about-container {
@@ -392,7 +398,7 @@
 .imagen {
   display: flex;
   justify-content: center;
-  transform: translateY(-95px);
+  /* transform: translateY(-95px); */
 }
 
 .photo {

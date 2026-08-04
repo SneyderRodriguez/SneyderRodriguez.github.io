@@ -174,7 +174,7 @@ body::before {
   =====================================================================*/
 #projects {
     min-height: 100vh;
-    padding: 100px 8%;
+    padding: 4rem 8%;
 }
 
 .projects-wrapper {
@@ -203,8 +203,7 @@ body::before {
     justify-content: center;
     align-items: center;
     touch-action: none;
-    transform: translate(-125px, -65px);
-    /* Prevent default touch actions */
+    /* transform: translate(-125px, -65px); */
 }
 
 .project-carousel {
