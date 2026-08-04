@@ -7,109 +7,13 @@
   /* Transiciones */
   --transition-state: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/*=====================================================================
-                                ACERCA DE MÍ
-  =====================================================================*/
-#about {
-  padding: 8rem 2.5rem;
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.about-title {
-  width: fit-content;
-  margin-left: auto;
-  margin-bottom: 3rem;
-}
-
-.about-title h2 {
-  font-family: var(--font-title);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  color: var(--textoprincipal);
-  margin-bottom: .8rem;
-}
-
-.about-phrase {
-  width: 430px;
-  text-align: right;
-  font-family: var(--font-text);
-  color: var(--textosecundario);
-  line-height: 1.6;
-}
-
-.about-body {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.imagen {
-  display: flex;
-  justify-content: center;
-  transform: translateY(-95px);
-}
-
-.photo {
-  width: 290px;
-  max-width: 100%;
-  opacity: .65;
-  filter:
-    grayscale(100%) brightness(1.25) contrast(.75);
-  transition: .35s ease;
-}
-
-.about-content {
-  max-width: 700px;
-}
-
-.about-content p {
-  font-family: var(--font-text);
-  color: var(--textosecundario);
-  font-size: 1.08rem;
-  line-height: 2;
-  margin-bottom: 1rem;
-}
-
-.about-content p:first-child {
-  color: var(--textoprincipal);
-  font-weight: 600;
-  font-size: 1.18rem;
-}
-
-/*=====================================================================
-                        ESTADOS DEL ACERCA DE MÍ
-  =====================================================================*/
-.photo:hover {
-  opacity: .9;
-  transform: translateY(-4px);
-}
-
-.about-title h2::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 3px;
-  margin-top: 12px;
-  margin-left: auto;
-  border-radius: 999px;
-  background: linear-gradient(90deg,
-      var(--azumagico),
-      transparent);
-}
-
 /*=====================================================================
                                 HERO
   =====================================================================*/
-#hero {
+/* #hero {
   min-height: 100vh;
-  /* padding-top: 7rem; */
-}
-
+  padding-top: 7rem;
+} */
 .hero-container {
   max-width: 1200px;
   min-height: 100vh;
@@ -443,4 +347,98 @@
 .state-recharging .artifact-halo {
   opacity: 1;
   transition: opacity 1.5s ease;
+}
+
+/*=====================================================================
+                                ACERCA DE MÍ
+  =====================================================================*/
+#about {
+  padding: 8rem 2.5rem;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-title {
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: 3rem;
+}
+
+.about-title h2 {
+  font-family: var(--font-title);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  color: var(--textoprincipal);
+  margin-bottom: .8rem;
+}
+
+.about-phrase {
+  width: 430px;
+  text-align: right;
+  font-family: var(--font-text);
+  color: var(--textosecundario);
+  line-height: 1.6;
+}
+
+.about-body {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.imagen {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-95px);
+}
+
+.photo {
+  width: 290px;
+  max-width: 100%;
+  opacity: .65;
+  filter:
+    grayscale(100%) brightness(1.25) contrast(.75);
+  transition: .35s ease;
+}
+
+.about-content {
+  max-width: 700px;
+}
+
+.about-content p {
+  font-family: var(--font-text);
+  color: var(--textosecundario);
+  font-size: 1.08rem;
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.about-content p:first-child {
+  color: var(--textoprincipal);
+  font-weight: 600;
+  font-size: 1.18rem;
+}
+
+/*=====================================================================
+                        ESTADOS DEL ACERCA DE MÍ
+  =====================================================================*/
+.photo:hover {
+  opacity: .9;
+  transform: translateY(-4px);
+}
+
+.about-title h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  margin-top: 12px;
+  margin-left: auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+      var(--azumagico),
+      transparent);
 }
