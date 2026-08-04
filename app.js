@@ -243,3 +243,35 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize the carousel
   init();
 });
+/*=====================================================================
+                        FUNCION FONDO
+  =====================================================================*/
+function createParticles() {
+    const container = document.querySelector(".particles");
+    const totalParticles = 36;
+
+    for (let i = 0; i < totalParticles; i++) {
+        const particle = document.createElement("span");
+        particle.classList.add("particle");
+        const size = Math.random() * 2 + 1;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.opacity = (Math.random() * 0.25 + 0.08).toFixed(2);
+
+        const random = Math.random();
+        if (random < 0.70) {
+            particle.style.background = "var(--azumagico)";
+        } else if (random < 0.95) {
+            particle.style.background = "var(--textoprincipal)";
+        } else {
+            particle.style.background = "var(--doradorunico)";
+        }
+        const duration = Math.random() * 10 + 12;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${Math.random() * 20}s`;
+        container.appendChild(particle);
+    }
+}
+createParticles();
