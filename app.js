@@ -2,14 +2,12 @@
                         FUNCION CAROUSEL
   =====================================================================*/
 document.addEventListener("DOMContentLoaded", function () {
-  // Elements
   const carousel = document.querySelector(".project-carousel");
   const cards = document.querySelectorAll(".project-card");
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
-  const projectLinks = document.querySelectorAll(".project-links a");
+  const projectLinks = document.querySelectorAll(".project-links");
 
-  // Variables
   let currentIndex = 0;
   let startX, startY;
   let isDragging = false;
@@ -17,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let radius = window.innerWidth <= 768 ? 250 : 300;
   const totalCards = cards.length;
 
-  // Initialize
   function init() {
     // Position cards in a circle
     arrangeCards();
@@ -174,3 +171,4 @@ document.addEventListener("DOMContentLoaded", function () {
 /*=====================================================================
                         FUNCION FONDO
   =====================================================================*/
+  
