@@ -38,45 +38,105 @@ section {
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
     background-color: var(--fondoprincipal);
-    background-image:
-        /*Iluminación superior*/
-        radial-gradient(circle at top left,
-            rgba(17, 157, 164, .08),
-            transparent 35%),
-        /*Iluminación inferior*/
-        radial-gradient(circle at bottom right,
-            rgba(12, 116, 137, .05),
-            transparent 40%),
-        /* Profundidad */
-        radial-gradient(circle at center,
-            rgba(255, 255, 255, .015),
-            transparent 70%);
-    background-attachment: fixed;
-    /*Evito que el fondo se mueva con el contenido*/
-    /*Si decido cambiar un día a IMAGENES*/
-    background-repeat: no-repeat;
-    background-size: cover;
     color: var(--textoprincipal);
 }
-
+/* ============================================================
+   FONDO MÁGICO
+   ============================================================ */
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
-    background:
-        radial-gradient(circle,
-            rgba(255, 255, 255, .015) 1px,
-            transparent 1px);
+    inset: -20%;
     pointer-events: none;
-    /* Evita que el pseudo-elemento capture los clics e interfiera con un posible boton*/
-    z-index: -1;
-    /* Controla el orden de las capas -1 enviar detras de las demás*/
+    z-index: 0;
+    background:
+        radial-gradient(
+            ellipse at 20% 30%,
+            rgba(17, 157, 164, .08),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(12, 116, 137, .07),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(33, 78, 52, .04),
+            transparent 45%
+        );
+    filter: blur(45px);
+    animation: magicFog 18s ease-in-out infinite alternate;
+}
+/* ============================================================
+   PARTÍCULAS
+   ============================================================ */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, .45) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(17, 157, 164, .35) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, .25) 1px,
+            transparent 1.5px
+        );
+    background-size:
+        180px 180px,
+        260px 260px,
+        340px 340px;
+    background-position:
+        20px 40px,
+        100px 150px,
+        50px 90px;
+    animation: particlesMove 35s linear infinite;
+}
+/* ============================================================
+   ANIMACIONES DEL FONDO
+   ============================================================ */
+@keyframes magicFog {
+    0% {
+        transform: translate3d(-3%, -2%, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(2%, 3%, 0) scale(1.05);
+    }
+    100% {
+        transform: translate3d(-1%, 1%, 0) scale(1.02);
+    }
 }
 
+@keyframes particlesMove {
+    0% {
+        background-position:
+            20px 40px,
+            100px 150px,
+            50px 90px;
+    }
+    100% {
+        background-position:
+            80px -120px,
+            -120px 80px,
+            150px -160px;
+    }
+}
 /*=====================================================================
                                 NAVBAR
   =====================================================================*/
