@@ -200,4 +200,28 @@ document.addEventListener("DOMContentLoaded", () => {
             startTimer(BASE_TIME + EXTRA_TIME);
         }
     });
+    spawnEnergyParticles();
 });
+
+function spawnEnergyParticles() {
+    const loader = document.querySelector(".loader");
+    const heroContent = document.querySelector(".hero-content");
+    if (!loader || !heroContent) return;
+    // Crear 8 partículas por ráfaga
+    for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+            if (!loader.classList.contains("is-active")) return;
+            const particle = document.createElement("span");
+            particle.classList.add("energy-particle");
+            // Desfase vertical aleatorio para que se dispersen bonito
+            const randomY = (Math.random() - 0.5) * 120;
+            particle.style.setProperty("--y-spread", `${randomY}px`);
+            loader.appendChild(particle);
+            // Eliminar elemento del DOM cuando termine su animación
+            particle.addEventListener("animationend", () => particle.remove());
+        }, i * 90); // Salen una por una
+    }
+    // Activar el brillo en el texto al recibir la energía
+    heroContent.classList.add("energy-glow");
+    setTimeout(() => heroContent.classList.remove("energy-glow"), 2500);
+}
