@@ -30,7 +30,7 @@
     width: 650px;
     aspect-ratio: 1;
     margin: 0 auto -100px;
-    transform: scale(1);
+    transform: scale(0.6);
     transform-origin: center top;
     margin-left: auto;
     animation: treeBreathing 10s ease-in-out infinite;
