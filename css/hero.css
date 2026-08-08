@@ -212,18 +212,18 @@
   }
 
   25% {
-    filter: hue-rotate(-3deg);
+    filter: hue-rotate(-30deg);
   }
 
   50% {
-    filter: hue-rotate(-6deg);
+    filter: hue-rotate(-60deg);
   }
 
-  /* 60%{
-    filter: hue-rotate(-8deg);
-  } */
-  75% {
-    filter: hue-rotate(-3deg);
+  60%{
+    filter: hue-rotate(-90deg);
+  }
+  80% {
+    filter: hue-rotate(-45deg);
   }
 
   100% {
