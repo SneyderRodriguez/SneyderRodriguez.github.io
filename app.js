@@ -169,5 +169,44 @@ document.addEventListener("DOMContentLoaded", function () {
   init();
 });
 /*=====================================================================
-                        FUNCION FONDO
+                        PIEZA CENTRAL
   =====================================================================*/
+const loader = document.querySelector(".loader");
+let timer;
+
+function apagarLoader() {
+  timer = setTimeout(() => {
+    loader.classList.add("is-off");
+  }, 5000);
+}
+
+apagarLoader();
+
+loader.addEventListener("mouseenter", () => {
+  loader.classList.remove("is-off");
+
+  clearTimeout(timer);
+  apagarLoader();
+});
+loader.addEventListener("mouseleave", () => {
+  clearTimeout(timer);
+  apagarLoader();
+});
+loader.addEventListener("mousemove", (event) => {
+  const rect = loader.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const relativeX = (x / rect.width) * 2 - 1;
+  const relativeY = (y / rect.height) * 2 - 1;
+  const distance = Math.sqrt(
+    relativeX * relativeX +
+    relativeY * relativeY
+  );
+  const intensity = 0.55 - distance * 0.25;
+  const lightSize = 180 + (1 - distance) * 40;
+  loader.style.setProperty("--mouse-x", relativeX);
+  loader.style.setProperty("--mouse-y", relativeY);
+  loader.style.setProperty("--light-intensity", intensity);
+  loader.style.setProperty("--light-size", `${lightSize}px`);
+  apagarLoader();
+});
