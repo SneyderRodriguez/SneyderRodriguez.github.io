@@ -118,10 +118,6 @@
   background: linear-gradient(180deg, var(--color-one) 30%, var(--color-two) 70%);
   mask: url(#clipping);
   -webkit-mask: url(#clipping);
-  transition:
-    opacity 1s ease,
-    filter 1s ease;
-  animation: energyCharge 1.5s ease-in-out infinite;
 }
 
 .loader svg {
@@ -229,19 +225,6 @@
 
   100% {
     filter: hue-rotate(0deg);
-  }
-}
-@keyframes floating {
-  0% {
-    transform: scale(var(--size)) translateY(0);
-  }
-
-  50% {
-    transform: scale(var(--size)) translateY(-12px);
-  }
-
-  100% {
-    transform: scale(var(--size)) translateY(0);
   }
 }
 /*=====================================================================
