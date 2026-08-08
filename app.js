@@ -172,56 +172,81 @@ document.addEventListener("DOMContentLoaded", function () {
                         PIEZA CENTRAL
   =====================================================================*/
 document.addEventListener("DOMContentLoaded", () => {
-    const energyPiece = document.querySelector(".loader");
-    if (!energyPiece) return;
+  const energyPiece = document.querySelector(".loader");
+  const heroContent = document.querySelector(".hero-content");
+  if (!energyPiece) return;
 
-    const BASE_TIME = 5000;    // 5 segundos iniciales
-    const EXTRA_TIME = 5000;   // 5 segundos adicionales tras interactuar
-    let energyTimer = null;
+  const BASE_TIME = 5000;
+  const ADD_TIME = 5000;
+  const MAX_TIME = 30000;
 
-    // Función para iniciar la cuenta regresiva de apagado
-    function startTimer(duration) {
-        clearTimeout(energyTimer);
-        energyTimer = setTimeout(() => {
-            energyPiece.classList.remove("is-active");
-        }, duration);
-    }
-    // Encendido inicial de 5 segundos al cargar
+  let energyTimer = null;
+  let particleInterval = null;
+  let currentDuration = BASE_TIME;
+
+  function startEnergySystem() {
+    clearTimeout(energyTimer);
+    clearInterval(particleInterval);
+
+    // Encendemos la pieza y el brillo continuo del hero
     energyPiece.classList.add("is-active");
-    startTimer(BASE_TIME);
-    // Cuando el cursor entra: reactiva la pieza y PAUSA la cuenta regresiva
-    energyPiece.addEventListener("mouseenter", () => {
-        clearTimeout(energyTimer);
-        energyPiece.classList.add("is-active");
-    });
-    // Cuando el cursor sale: arranca el temporizador extendido (10 segundos)
-    energyPiece.addEventListener("mouseleave", () => {
-        if (energyPiece.classList.contains("is-active")) {
-            startTimer(BASE_TIME + EXTRA_TIME);
-        }
-    });
+    if (heroContent) heroContent.classList.add("energy-glow");
+
+    // Ráfaga inicial + intervalo continuo de partículas
     spawnEnergyParticles();
+    particleInterval = setInterval(() => {
+      if (energyPiece.classList.contains("is-active")) {
+        spawnEnergyParticles();
+      }
+    }, 2200);
+
+    // Temporizador para APAGAR
+    energyTimer = setTimeout(() => {
+      deactivateEnergy();
+    }, currentDuration);
+  }
+
+  function deactivateEnergy() {
+    energyPiece.classList.remove("is-active");
+    // Apagamos el resplandor del texto cuando la esfera se desactiva
+    if (heroContent) heroContent.classList.remove("energy-glow");
+
+    clearInterval(particleInterval);
+    currentDuration = BASE_TIME;
+  }
+
+  // --- EVENTOS DE INTERACCIÓN ---
+  startEnergySystem();
+
+  energyPiece.addEventListener("mouseenter", () => {
+    clearTimeout(energyTimer);
+    energyPiece.classList.add("is-active");
+    if (heroContent) heroContent.classList.add("energy-glow");
+  });
+
+  energyPiece.addEventListener("mouseleave", () => {
+    currentDuration = Math.min(currentDuration + ADD_TIME, MAX_TIME);
+    startEnergySystem();
+  });
 });
 
 function spawnEnergyParticles() {
-    const loader = document.querySelector(".loader");
-    const heroContent = document.querySelector(".hero-content");
-    if (!loader || !heroContent) return;
-    // Crear 8 partículas por ráfaga
-    for (let i = 0; i < 8; i++) {
-        setTimeout(() => {
-            if (!loader.classList.contains("is-active")) return;
-            const particle = document.createElement("span");
-            particle.classList.add("energy-particle");
-            // Desfase vertical aleatorio para que se dispersen bonito
-            const randomY = (Math.random() - 0.5) * 120;
-            particle.style.setProperty("--y-spread", `${randomY}px`);
-            loader.appendChild(particle);
-            // Eliminar elemento del DOM cuando termine su animación
-            particle.addEventListener("animationend", () => particle.remove());
-        }, i * 90); // Salen una por una
-    }
-    // Activar el brillo en el texto al recibir la energía
-    heroContent.classList.add("energy-glow");
-    setTimeout(() => heroContent.classList.remove("energy-glow"), 2500);
+  const loader = document.querySelector(".loader");
+  if (!loader || !loader.classList.contains("is-active")) return;
+
+  for (let i = 0; i < 8; i++) {
+    setTimeout(() => {
+      if (!loader.classList.contains("is-active")) return;
+
+      const particle = document.createElement("span");
+      particle.classList.add("energy-particle");
+
+      const randomY = (Math.random() - 0.5) * 120;
+      particle.style.setProperty("--y-spread", `${randomY}px`);
+
+      loader.appendChild(particle);
+      particle.addEventListener("animationend", () => particle.remove());
+    }, i * 90);
+  }
+  // Ya no quitamos 'energy-glow' aquí para evitar el parpadeo
 }
