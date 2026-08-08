@@ -74,38 +74,7 @@
                         <span>Contáctame</span>
                     </a>
                 </header>
-<div class="personal-history">
-    <div class="energy-core-container">
-        <!-- Canvas para partículas de plasma ascendente -->
-        <canvas id="core-canvas"></canvas>
-
-        <!-- Núcleo en forma de flama viva en SVG -->
-        <div class="plasma-flame-wrapper">
-            <svg class="plasma-flame" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="plasmaGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                        <stop offset="0%" stop-color="var(--azulbrillante)" />
-                        <stop offset="50%" stop-color="var(--azumagico)" />
-                        <stop offset="100%" stop-color="var(--textoprincipal)" />
-                    </linearGradient>
-                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="8" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                </defs>
-                <!-- Forma estilizada de flama con morphing CSS -->
-                <path class="flame-path" filter="url(#glow)" fill="url(#plasmaGrad)" 
-                      d="M100,15 C130,70 170,120 160,180 C150,230 110,250 100,250 C90,250 50,230 40,180 C30,120 70,70 100,15 Z" />
-            </svg>
-            <div class="flame-core-glow"></div>
-        </div>
-
-        <!-- Anillos orbitales tecnológicos (Gama exclusivamente azul) -->
-        <div class="orbital-ring ring-1"></div>
-        <div class="orbital-ring ring-2"></div>
-        <div class="orbital-ring ring-3"></div>
-    </div>
-</div>
+                <div class="personal-history"></div>
         </section>
         <!-- ============================================================================
                                         ACERCA DE MÍ

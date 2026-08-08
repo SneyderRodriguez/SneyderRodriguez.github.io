@@ -1,9 +1,10 @@
 /*=====================================================================
                                 HERO
   =====================================================================*/
-  #hero {
+#hero {
   padding-top: 7rem;
 }
+
 .hero-container {
   max-width: 1200px;
   min-height: 80vh;
@@ -74,165 +75,7 @@
 .hero-content h4 {
   margin-bottom: clamp(3rem, 6vw, 8rem);
 }
-/*=====================================================================
-      NÚCLEO DE ENERGÍA 3D - FLAMA CIRCULAR Y COMPACTA
-  =====================================================================*/
 
-.personal-history {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    min-height: 320px;
-    position: relative;
-}
-
-.energy-core-container {
-    position: relative;
-    width: 240px;
-    height: 240px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 800px;
-    transform-style: preserve-3d;
-}
-
-/* Canvas ajustado a menor escala */
-#core-canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    height: 320px;
-    pointer-events: none;
-    z-index: 1;
-    filter: blur(6px) drop-shadow(0 0 15px var(--azumagico));
-}
-
-/* Núcleo compacto: más circular pero conservando la onda de flama */
-.core-center {
-    position: absolute;
-    width: 70px;
-    height: 82px;
-    /* Redondeado suave: base ancha y punta muy sutil (estilo lágrima pequeña) */
-    border-radius: 50% 50% 42% 42% / 58% 58% 42% 42%;
-    background: radial-gradient(circle at 50% 75%, 
-        #FFFFFF 0%, 
-        var(--azumagico) 50%, 
-        var(--azulbrillante) 85%, 
-        transparent 100%);
-    box-shadow: 
-        0 0 20px var(--azumagico),
-        0 -8px 25px var(--azulbrillante),
-        inset 0 -6px 12px rgba(255, 255, 255, 0.9);
-    z-index: 2;
-    animation: compactFlameMorph 2.2s ease-in-out infinite alternate;
-}
-
-/* Anillos Orbitales Reducidos */
-.orbital-ring {
-    position: absolute;
-    border-radius: 50%;
-    border: 1.5px solid transparent;
-    transform-style: preserve-3d;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.ring-1 {
-    width: 150px;
-    height: 150px;
-    border-top-color: var(--azumagico);
-    border-bottom-color: rgba(17, 157, 164, 0.2);
-    box-shadow: 0 0 10px var(--shadow-blue);
-    animation: rotateRing1 8s linear infinite;
-}
-
-.ring-2 {
-    width: 180px;
-    height: 180px;
-    border-left-color: #FFFFFF;
-    border-right-color: var(--azumagico);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-    animation: rotateRing2 11s linear infinite reverse;
-}
-
-.ring-3 {
-    width: 210px;
-    height: 210px;
-    border-top-color: var(--azulbrillante);
-    border-right-color: var(--azumagico);
-    animation: rotateRing3 15s linear infinite;
-}
-
-/* Animación sutil y esférica de la flama */
-@keyframes compactFlameMorph {
-    0% {
-        transform: scale(0.95) translateY(0) rotate(-1deg);
-        border-radius: 50% 50% 44% 44% / 60% 60% 40% 40%;
-        box-shadow: 0 0 18px var(--azumagico), 0 -6px 20px var(--azulbrillante);
-    }
-    50% {
-        transform: scale(1.02) translateY(-3px) rotate(1deg);
-        border-radius: 48% 52% 40% 42% / 56% 62% 38% 44%;
-    }
-    100% {
-        transform: scale(1.05) translateY(-5px) rotate(-1deg);
-        border-radius: 52% 48% 42% 38% / 62% 54% 42% 38%;
-        box-shadow: 0 0 30px var(--azumagico), 0 -12px 35px var(--azumagico);
-    }
-}
-
-@keyframes rotateRing1 {
-    0% { transform: rotateX(65deg) rotateY(25deg) rotateZ(0deg); }
-    100% { transform: rotateX(65deg) rotateY(25deg) rotateZ(360deg); }
-}
-
-@keyframes rotateRing2 {
-    0% { transform: rotateX(35deg) rotateY(70deg) rotateZ(0deg); }
-    100% { transform: rotateX(35deg) rotateY(70deg) rotateZ(360deg); }
-}
-
-@keyframes rotateRing3 {
-    0% { transform: rotateX(75deg) rotateY(-40deg) rotateZ(0deg); }
-    100% { transform: rotateX(75deg) rotateY(-40deg) rotateZ(360deg); }
-}
-/*=====================================================================
-            INTERACCIÓN DE ENCENDIDO / DISIPACIÓN
-  =====================================================================*/
-
-/* Transición suave para todos los elementos animados */
-.core-center,
-.orbital-ring,
-#core-canvas {
-    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out, filter 1.2s ease-in-out;
-}
-
-/* Área de interacción del mouse */
-.energy-core-container {
-    cursor: pointer;
-}
-
-/* ESTADO APAGADO / DISIPADO */
-.energy-core-container.is-off .core-center {
-    opacity: 0;
-    transform: scale(0.3);
-    box-shadow: 0 0 0 transparent;
-}
-
-.energy-core-container.is-off .orbital-ring {
-    opacity: 0.05; /* Se apagan casi por completo */
-    border-color: transparent;
-    box-shadow: none;
-}
-
-.energy-core-container.is-off #core-canvas {
-    opacity: 0;
-    filter: blur(15px);
-}
 /*=====================================================================
                                 ACERCA DE MÍ
   =====================================================================*/
