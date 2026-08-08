@@ -11,7 +11,7 @@
   margin: 0 auto;
   padding: 0 2.5rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 520px;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 3rem;
 }
@@ -23,7 +23,6 @@
   justify-content: center;
   align-items: flex-start;
   max-width: 620px;
-/* 2. Resplandor (Glow) que recibe el contenido del Hero */
   transition: filter 0.8s ease, text-shadow 0.8s ease;
 }
 
@@ -77,6 +76,12 @@
 .hero-content h4 {
   margin-bottom: clamp(3rem, 6vw, 8rem);
 }
+.hero-history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 /* ====================================================
                   ESTADO DEL HERO
    ==================================================== */
@@ -106,7 +111,7 @@
   transform: scale(var(--size));
   animation: colorize calc(var(--time-animation)*3) ease-in-out infinite, float 4s ease-in-out infinite;
   animation-play-state: paused;
-  left: 100px;
+  margin-right: 2rem;
   /* Transición suave de apagado */
   opacity: 0.4;
   filter: brightness(0.6) blur(0.5px);
@@ -212,15 +217,15 @@
   left: 50%;
   width: 8px;
   height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
   background: radial-gradient(circle, #35D6FF 30%, #7A5CFF 100%);
   border-radius: 50%;
-  /* El blur elimina la rigidez y crea el efecto de chispa flotante */
   filter: blur(1px);
   box-shadow: 0 0 12px #35D6FF, 0 0 24px #7A5CFF;
   pointer-events: none;
   z-index: 10;
   opacity: 0;
-  /* Transición ultra suave en 'linear' para deslizamiento continuo */
   animation: flyToContentSmooth 2.2s linear forwards;
 }
 @keyframes rotation {
@@ -291,12 +296,10 @@
   }
   15% {
     opacity: 0.9;
-    /* Comienza a subir/bajar suavemente */
     transform: translate(-50px, var(--y-spread)) scale(1.2);
   }
   50% {
     opacity: 0.7;
-    /* Punto medio de ondulación */
     transform: translate(-180px, calc(var(--y-spread) * 1.3)) scale(1);
     filter: blur(2px);
   }
@@ -305,7 +308,6 @@
   }
   100% {
     opacity: 0;
-    /* Llega al destino deslizándose y disolviéndose */
     transform: translate(-380px, calc(var(--y-spread) * 0.4)) scale(0.1);
     filter: blur(4px);
   }
