@@ -208,16 +208,16 @@
     filter: hue-rotate(0deg);
   }
   20%{
-    filter: hue-rotate(-30deg);
+    filter: hue-rotate(20deg);
   }
   40%{
-    filter: hue-rotate(-60deg);
+    filter: hue-rotate(28deg);
   }
   60%{
-    filter: hue-rotate(-90deg);
+    filter: hue-rotate(45deg);
   }
   80%{
-    filter: hue-rotate(-45deg);
+    filter: hue-rotate(20deg);
   }
   100%{
     filter: hue-rotate(0deg);
