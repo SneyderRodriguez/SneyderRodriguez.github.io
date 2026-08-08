@@ -80,11 +80,11 @@
                     PIEZA CENTRAL
 ==================================================== */
 .loader{
-  --color-one: #ffbf48;
-  --color-two: #be4a1d;
-  --color-three: #ffbf4780;
-  --color-four: #bf4a1d80;
-  --color-five: #ffbf4740;
+  --color-one: #119DA4;
+  --color-two: #0C7489;
+  --color-three: #35D6FF;
+  --color-four: #6845D8;
+  --color-five: #7A5CFF;
   --time-animation: 2s;
   --size: 1;
   position: relative;
