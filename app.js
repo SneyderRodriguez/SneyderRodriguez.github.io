@@ -208,5 +208,4 @@ loader.addEventListener("mousemove", (event) => {
   loader.style.setProperty("--mouse-y", relativeY);
   loader.style.setProperty("--light-intensity", intensity);
   loader.style.setProperty("--light-size", `${lightSize}px`);
-  apagarLoader();
 });
