@@ -288,7 +288,6 @@
     transform: scale(var(--size)) translateY(-15px); /* Eleva la pieza 15px */
   }
 }
-/* Trayectoria de la energía de Derecha a Izquierda */
 @keyframes flyToContentSmooth {
   0% {
     opacity: 0;
@@ -296,11 +295,11 @@
   }
   15% {
     opacity: 0.9;
-    transform: translate(-50px, var(--y-spread)) scale(1.2);
+    transform: translate(-60px, var(--y-spread)) scale(1.2);
   }
   50% {
     opacity: 0.7;
-    transform: translate(-180px, calc(var(--y-spread) * 1.3)) scale(1);
+    transform: translate(-220px, calc(var(--y-spread) * 1.3)) scale(1);
     filter: blur(2px);
   }
   85% {
@@ -308,7 +307,7 @@
   }
   100% {
     opacity: 0;
-    transform: translate(-380px, calc(var(--y-spread) * 0.4)) scale(0.1);
+    transform: translate(-420px, calc(var(--y-spread) * 0.4)) scale(0.1);
     filter: blur(4px);
   }
 }
