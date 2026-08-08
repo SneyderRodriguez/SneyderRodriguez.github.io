@@ -171,3 +171,33 @@ document.addEventListener("DOMContentLoaded", function () {
 /*=====================================================================
                         PIEZA CENTRAL
   =====================================================================*/
+document.addEventListener("DOMContentLoaded", () => {
+    const energyPiece = document.querySelector(".loader");
+    if (!energyPiece) return;
+
+    const BASE_TIME = 5000;    // 5 segundos iniciales
+    const EXTRA_TIME = 5000;   // 5 segundos adicionales tras interactuar
+    let energyTimer = null;
+
+    // Función para iniciar la cuenta regresiva de apagado
+    function startTimer(duration) {
+        clearTimeout(energyTimer);
+        energyTimer = setTimeout(() => {
+            energyPiece.classList.remove("is-active");
+        }, duration);
+    }
+    // Encendido inicial de 5 segundos al cargar
+    energyPiece.classList.add("is-active");
+    startTimer(BASE_TIME);
+    // Cuando el cursor entra: reactiva la pieza y PAUSA la cuenta regresiva
+    energyPiece.addEventListener("mouseenter", () => {
+        clearTimeout(energyTimer);
+        energyPiece.classList.add("is-active");
+    });
+    // Cuando el cursor sale: arranca el temporizador extendido (10 segundos)
+    energyPiece.addEventListener("mouseleave", () => {
+        if (energyPiece.classList.contains("is-active")) {
+            startTimer(BASE_TIME + EXTRA_TIME);
+        }
+    });
+});
