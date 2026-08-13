@@ -112,7 +112,6 @@
   animation: colorize calc(var(--time-animation)*3) ease-in-out infinite, float 4s ease-in-out infinite;
   animation-play-state: paused;
   margin-right: 2rem;
-  /* Transición suave de apagado */
   opacity: 0.4;
   filter: brightness(0.6) blur(0.5px);
   transition: opacity 1.2s ease-out, filter 1.2s ease-out;
@@ -285,7 +284,7 @@
     transform: scale(var(--size)) translateY(0px);
   }
   50% {
-    transform: scale(var(--size)) translateY(-15px); /* Eleva la pieza 15px */
+    transform: scale(var(--size)) translateY(-15px);
   }
 }
 @keyframes flyToContentSmooth {
@@ -317,7 +316,6 @@
 .loader.is-active {
   opacity: 1;
   filter: brightness(1) blur(0px);
-  /* Se activan la flotación y el cambio de color */
   transition: opacity 0.6s ease-in, filter 0.6s ease-in;
   animation-play-state: running;
 }
