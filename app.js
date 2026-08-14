@@ -249,3 +249,33 @@ function spawnEnergyParticles() {
     }, i * 90);
   }
 }
+/*=====================================================================
+                                BODY
+  =====================================================================*/
+const numStars = 45;
+
+const starsContainer = document.createElement('div');
+starsContainer.id = 'stars-container';
+document.body.prepend(starsContainer);
+
+function createStar() {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.left = Math.random() * 100 + 'vw';
+
+    const scale = Math.random() * 0.8 + 0.5;
+
+    const duration = Math.random() * 3 + 2;
+    const delay = Math.random() * 4;
+
+    star.style.transform = `scale(${scale})`;
+    star.style.animation = `twinkle ${duration}s ease-in-out ${delay}s infinite`;
+
+    return star;
+}
+
+for (let i = 0; i < numStars; i++) {
+    starsContainer.appendChild(createStar());
+}

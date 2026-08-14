@@ -14,6 +14,7 @@
     --shadow-blue: rgba(17, 157, 164, .25);
     --shadow-gold: rgba(212, 175, 55, .20);
     --glass: rgba(23, 35, 61, .55);
+    --elune-glow: rgba(17, 157, 164, 0.05);
     /*Tipografia*/
     --font-title: "Sora", sans-serif;
     --font-text: "Inter" sans-serif;
@@ -41,6 +42,45 @@ body {
     overflow-x: hidden;
     background-color: var(--fondoprincipal);
     color: var(--textoprincipal);
+}
+
+#stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--textoprincipal);
+    clip-path: polygon(
+        50% 0%, 
+        62% 38%, 
+        100% 50%, 
+        62% 62%, 
+        50% 100%, 
+        38% 62%, 
+        0% 50%, 
+        38% 38%
+    );
+    opacity: 0.8;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.1;
+        transform: scale(0.6);
+    }
 }
 /*=====================================================================
                                 NAVBAR
