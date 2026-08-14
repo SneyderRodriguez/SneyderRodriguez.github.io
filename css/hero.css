@@ -76,25 +76,28 @@
 .hero-content h4 {
   margin-bottom: clamp(3rem, 6vw, 8rem);
 }
+
 .hero-history {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
+
 /* ====================================================
                   ESTADO DEL HERO
    ==================================================== */
 .hero-content.energy-glow h1 {
-    text-shadow: 0 0 20px rgba(53, 214, 255, 0.6), 0 0 40px rgba(122, 92, 255, 0.4);
-    transition: text-shadow 0.8s ease;
+  text-shadow: 0 0 20px rgba(53, 214, 255, 0.6), 0 0 40px rgba(122, 92, 255, 0.4);
+  transition: text-shadow 0.8s ease;
 }
 
 .hero-content.energy-glow h4 {
-    color: #35D6FF;
-    text-shadow: 0 0 12px rgba(53, 214, 255, 0.8);
-    transition: color 0.8s ease, text-shadow 0.8s ease;
+  color: #35D6FF;
+  text-shadow: 0 0 12px rgba(53, 214, 255, 0.8);
+  transition: color 0.8s ease, text-shadow 0.8s ease;
 }
+
 /* ====================================================
                     PIEZA CENTRAL
    ==================================================== */
@@ -138,21 +141,28 @@
 .loader .box {
   width: 100px;
   height: 100px;
-  background: linear-gradient(180deg,
-      var(--color-three) 0%,
-      var(--color-one) 35%,
-      var(--color-four) 70%,
-      var(--color-two) 100%);
+    background:
+        radial-gradient(
+            circle at 38% 32%,
+            rgba(255, 255, 255, 0.65) 0%,
+            var(--color-three) 12%,
+            var(--color-one) 35%,
+            var(--color-four) 68%,
+            var(--color-two) 100%);
   mask: url(#clipping);
   -webkit-mask: url(#clipping);
-
+    box-shadow:
+        inset 10px 8px 15px rgba(255, 255, 255, 0.12),
+        inset -12px -14px 18px rgba(0, 20, 45, 0.42);
   opacity: 0;
   transition: opacity 1.2s ease-out;
+  animation: innerEnergy 7s ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 .loader svg {
   position: absolute;
-  
+
   opacity: 0;
   transition: opacity 1.2s ease-out;
 }
@@ -210,6 +220,7 @@
   animation-delay: calc(var(--time-animation)/-1.5);
   animation-play-state: paused;
 }
+
 .energy-particle {
   position: absolute;
   top: 50%;
@@ -227,6 +238,7 @@
   opacity: 0;
   animation: flyToContentSmooth 2.2s linear forwards;
 }
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -259,57 +271,108 @@
   }
 }
 
-@keyframes colorize{
-  0%{
+@keyframes colorize {
+  0% {
     filter: hue-rotate(0deg);
   }
-  20%{
+
+  20% {
     filter: hue-rotate(20deg);
   }
-  40%{
+
+  40% {
     filter: hue-rotate(28deg);
   }
-  60%{
+
+  60% {
     filter: hue-rotate(45deg);
   }
-  80%{
+
+  80% {
     filter: hue-rotate(20deg);
   }
-  100%{
+
+  100% {
     filter: hue-rotate(0deg);
   }
 }
+
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(var(--size)) translateY(0px);
   }
+
   50% {
     transform: scale(var(--size)) translateY(-15px);
   }
 }
+
 @keyframes flyToContentSmooth {
   0% {
     opacity: 0;
     transform: translate(0, 0) scale(0.6);
   }
+
   15% {
     opacity: 0.9;
     transform: translate(-60px, var(--y-spread)) scale(1.2);
   }
+
   50% {
     opacity: 0.7;
     transform: translate(-220px, calc(var(--y-spread) * 1.3)) scale(1);
     filter: blur(2px);
   }
+
   85% {
     opacity: 0.4;
   }
+
   100% {
     opacity: 0;
     transform: translate(-420px, calc(var(--y-spread) * 0.4)) scale(0.1);
     filter: blur(4px);
   }
 }
+
+@keyframes innerEnergy {
+
+  0% {
+    background:
+      radial-gradient(circle at 45% 40%,
+        rgba(255, 255, 255, 0.80) 0%,
+        rgba(53, 214, 255, 0.75) 10%,
+        rgba(53, 214, 255, 0.40) 24%,
+        rgba(17, 157, 164, 0.20) 42%,
+        rgba(104, 69, 216, 0.55) 68%,
+        var(--color-two) 100%);
+  }
+
+  50% {
+    background:
+      radial-gradient(circle at 55% 48%,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(53, 214, 255, 0.78) 10%,
+        rgba(53, 214, 255, 0.42) 24%,
+        rgba(17, 157, 164, 0.22) 42%,
+        rgba(104, 69, 216, 0.55) 68%,
+        var(--color-two) 100%);
+  }
+
+  100% {
+    background:
+      radial-gradient(circle at 45% 40%,
+        rgba(255, 255, 255, 0.80) 0%,
+        rgba(53, 214, 255, 0.75) 10%,
+        rgba(53, 214, 255, 0.40) 24%,
+        rgba(17, 157, 164, 0.20) 42%,
+        rgba(104, 69, 216, 0.55) 68%,
+        var(--color-two) 100%);
+  }
+}
+
 /* ====================================================
                   PIEZA EN ESTADO ACTIVO
    ==================================================== */
@@ -319,15 +382,20 @@
   transition: opacity 0.6s ease-in, filter 0.6s ease-in;
   animation-play-state: running;
 }
+
 .loader.is-active .box,
 .loader.is-active svg {
   opacity: 1;
   transition: opacity 0.6s ease-in;
 }
+.loader.is-active .box{
+  animation-play-state: running;
+}
 .loader.is-active svg #clipping,
 .loader.is-active svg #clipping polygon {
   animation-play-state: running;
 }
+
 /*=====================================================================
                                 ACERCA DE MÍ
   =====================================================================*/

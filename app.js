@@ -248,5 +248,4 @@ function spawnEnergyParticles() {
       particle.addEventListener("animationend", () => particle.remove());
     }, i * 90);
   }
-  // Ya no quitamos 'energy-glow' aquí para evitar el parpadeo
 }
