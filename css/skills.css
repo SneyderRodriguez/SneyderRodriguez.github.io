@@ -65,36 +65,30 @@
 .skill-html img,
 .skill-css img,
 .skill-future img,
-.skill-block img {
+.skill-block img{
     width: 60px;
     height: auto;
 }
 
 .skill-center img {
-    width: 158px;
+    width: 140px;
     animation: centerPulse 7s ease-in-out infinite;
 }
 
 .skill-js img {
-    width: 80px;
+    width: 65px;
 }
 
+.skill-nodejs img,
+.skill-postgresql img,
 .skill-java img {
-    width: 85px;
-}
-
-.skill-nodejs img {
-    width: 75px;
-}
-
-.skill-postgresql img {
     width: 75px;
 }
 
 /*UBICACIONES DE LAS HABILIDADES*/
 .skill-center {
     left: 290px;
-    top: 283px;
+    top: 280px;
 }
 
 .skill-future {
@@ -114,7 +108,7 @@
 
 .skill-js {
     left: 480px;
-    top: 243px;
+    top: 250px;
 }
 
 .skill-java {
