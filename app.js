@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function rotateCarousel() {
     carousel.style.transform = `rotateY(${theta}deg)`;
-
     currentIndex = Math.round(
       Math.abs(theta / (360 / totalCards)) % totalCards
     );
@@ -86,13 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function drag(e) {
     if (!isDragging) return;
     e.preventDefault();
-
     const currentX = e.pageX || (e.touches ? e.touches[0].pageX : startX);
     const diffX = currentX - startX;
-
     const sensitivity = 0.5;
     const newTheta = theta + diffX * sensitivity;
-
     carousel.style.transform = `rotateY(${newTheta}deg)`;
   }
 
@@ -120,9 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleKeyDown(e) {
     if (e.key === "ArrowLeft") {
-      nextCard(); // Changed to match swipe direction
+      nextCard();
     } else if (e.key === "ArrowRight") {
-      prevCard(); // Changed to match swipe direction
+      prevCard();
     } else if (e.key === "Enter" || e.key === " ") {
       const currentCard = document.querySelector(
         `.project-card[data-index="${currentIndex}"]`
