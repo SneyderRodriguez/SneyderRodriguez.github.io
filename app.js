@@ -16,10 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalCards = cards.length;
 
   function init() {
-    // Position cards in a circle
     arrangeCards();
-
-    // Add event listeners
     prevBtn.addEventListener("click", prevCard);
     nextBtn.addEventListener("click", nextCard);
     cards.forEach((card) => {
@@ -31,87 +28,68 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Touch/mouse events for dragging
     carousel.addEventListener("mousedown", dragStart);
     carousel.addEventListener("touchstart", dragStart, { passive: true });
     document.addEventListener("mousemove", drag);
     document.addEventListener("touchmove", drag, { passive: false });
     document.addEventListener("mouseup", dragEnd);
     document.addEventListener("touchend", dragEnd);
-
-    // Keyboard navigation
     document.addEventListener("keydown", handleKeyDown);
   }
 
-  // Arrange cards in a circle
   function arrangeCards() {
     const angle = 360 / totalCards;
     cards.forEach((card, index) => {
-      // Calculate the angle for this card
       const cardAngle = angle * index;
-      // Convert to radians
       const rad = (cardAngle * Math.PI) / 180;
-      // Calculate position
       const x = radius * Math.sin(rad);
       const z = radius * Math.cos(rad) * -1;
-
-      // Apply transform
       card.style.transform = `rotateY(${cardAngle}deg) translateZ(${radius}px)`;
-
-      // Store the card's index
       card.dataset.index = index;
     });
   }
 
-  // Rotate carousel
   function rotateCarousel() {
     carousel.style.transform = `rotateY(${theta}deg)`;
 
-    // Update current card index
     currentIndex = Math.round(
       Math.abs(theta / (360 / totalCards)) % totalCards
     );
     if (currentIndex >= totalCards) currentIndex = 0;
   }
 
-  // Next card
   function nextCard() {
-    theta -= 360 / totalCards; // Changed direction to match swipe
+    theta -= 360 / totalCards;
     rotateCarousel();
   }
 
-  // Previous card
   function prevCard() {
-    theta += 360 / totalCards; // Changed direction to match swipe
+    theta += 360 / totalCards;
     rotateCarousel();
   }
 
-  // Flip card
   function flipCard(e) {
     const card = e.currentTarget;
     const cardIndex = parseInt(card.dataset.index);
 
-    // Only flip the current front-facing card
     if (cardIndex === currentIndex) {
       card.classList.toggle("flipped");
     }
   }
 
-  // Drag functions
   function dragStart(e) {
-    e.preventDefault(); // Prevent default behavior
+    e.preventDefault();
     isDragging = true;
     startX = e.pageX || e.touches[0].pageX;
   }
 
   function drag(e) {
     if (!isDragging) return;
-    e.preventDefault(); // Prevent default scrolling
+    e.preventDefault();
 
     const currentX = e.pageX || (e.touches ? e.touches[0].pageX : startX);
     const diffX = currentX - startX;
 
-    // Rotate based on drag distance - FIXED DIRECTION
     const sensitivity = 0.5;
     const newTheta = theta + diffX * sensitivity;
 
@@ -126,16 +104,13 @@ document.addEventListener("DOMContentLoaded", function () {
       e.pageX || (e.changedTouches ? e.changedTouches[0].pageX : startX);
     const diffX = currentX - startX;
 
-    // FIXED DIRECTION: If swiping right, show previous card (theta increases)
-    // If swiping left, show next card (theta decreases)
     if (Math.abs(diffX) > 20) {
       if (diffX > 0) {
-        prevCard(); // Swipe right to see previous card
+        prevCard();
       } else {
-        nextCard(); // Swipe left to see next card
+        nextCard();
       }
     } else {
-      // Snap to the closest card
       const anglePerCard = 360 / totalCards;
       const snapAngle = Math.round(theta / anglePerCard) * anglePerCard;
       theta = snapAngle;
@@ -143,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Keyboard navigation
   function handleKeyDown(e) {
     if (e.key === "ArrowLeft") {
       nextCard(); // Changed to match swipe direction
@@ -158,14 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-  // Resize handler
   window.addEventListener("resize", () => {
     radius = window.innerWidth <= 768 ? 250 : 400;
     arrangeCards();
     rotateCarousel();
   });
-
-  // Initialize the carousel
   init();
 });
 /*=====================================================================
@@ -208,14 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function deactivateEnergy() {
     energyPiece.classList.remove("is-active");
-    // Apagamos el resplandor del texto cuando la esfera se desactiva
+
     if (heroContent) heroContent.classList.remove("energy-glow");
 
     clearInterval(particleInterval);
     currentDuration = BASE_TIME;
   }
-
-  // --- EVENTOS DE INTERACCIÓN ---
   startEnergySystem();
 
   energyPiece.addEventListener("mouseenter", () => {
@@ -259,20 +228,17 @@ starsContainer.id = 'stars-container';
 document.body.prepend(starsContainer);
 
 function createStar() {
-    const star = document.createElement('div');
-    star.classList.add('star');
-
-    star.style.top = Math.random() * 100 + 'vh';
-    star.style.left = Math.random() * 100 + 'vw';
-
-    const scale = Math.random() * 0.8 + 0.5;
-
-    const duration = Math.random() * 3 + 2;
-    const delay = Math.random() * 4;
-
-    star.style.transform = `scale(${scale})`;
-    star.style.animation = `twinkle ${duration}s ease-in-out ${delay}s infinite`;
-
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    const size = Math.random() * 5 + 4;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    const duration = Math.random() * 4 + 3;
+    const delay = Math.random() * 6;
+    star.style.animationDuration = `${duration}s`;
+    star.style.animationDelay = `${delay}s`;
     return star;
 }
 

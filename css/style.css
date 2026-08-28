@@ -52,34 +52,88 @@ body {
     height: 100vh;
     z-index: -1;
     pointer-events: none;
+    overflow: hidden;
+}
+
+/*=====================================================================
+                        CIELO NOCTURNO
+  =====================================================================*/
+
+#stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .star {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: var(--textoprincipal);
+    width: 9px;
+    height: 9px;
+    background: var(--textoprincipal);
     clip-path: polygon(
-        50% 0%, 
-        62% 38%, 
-        100% 50%, 
-        62% 62%, 
-        50% 100%, 
-        38% 62%, 
-        0% 50%, 
-        38% 38%
-    );
-    opacity: 0.8;
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 95%,
+        50% 73%,
+        21% 95%,
+        32% 57%,
+        2% 35%,
+        39% 35%);
+    opacity: 0.15;
+    filter: drop-shadow(0 0 3px var(--textoprincipal));
+    animation-name: twinkle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: opacity, transform;
 }
 
 @keyframes twinkle {
-    0%, 100% {
-        opacity: 0.7;
-        transform: scale(1);
+
+    0% {
+        opacity: 0.15;
+        transform: scale(0.7);
+        filter: drop-shadow(
+            0 0 2px var(--textoprincipal)
+        );
     }
+
+    25% {
+        opacity: 0.45;
+        transform: scale(0.9);
+        filter: drop-shadow(
+            0 0 4px var(--textoprincipal)
+        );
+    }
+
     50% {
-        opacity: 0.1;
-        transform: scale(0.6);
+        opacity: 1;
+        transform: scale(1.15);
+        filter: drop-shadow(
+            0 0 8px var(--textoprincipal)
+        );
+    }
+
+    75% {
+        opacity: 0.4;
+        transform: scale(0.9);
+        filter: drop-shadow(
+            0 0 4px var(--textoprincipal)
+        );
+    }
+
+    100% {
+        opacity: 0.15;
+        transform: scale(0.7);
+        filter: drop-shadow(
+            0 0 2px var(--textoprincipal)
+        );
     }
 }
 /*=====================================================================
