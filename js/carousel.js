@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const projectLinks = document.querySelectorAll(".project-links");
 
   let currentIndex = 0;
-  let startX;
+  let startX = 0;
   let isDragging = false;
   let theta = 0;
   const totalCards = cards.length;
