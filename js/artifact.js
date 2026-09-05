@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const BASE_TIME = 5000;
   const ADD_TIME = 5000;
   const MAX_TIME = 30000;
-
   let energyTimer = null;
   let particleInterval = null;
   let currentDuration = BASE_TIME;
@@ -31,12 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     energyPiece.classList.remove("is-active");
 
     if (heroContent) heroContent.classList.remove("energy-glow");
-
     clearInterval(particleInterval);
     currentDuration = BASE_TIME;
   }
   startEnergySystem();
-
   energyPiece.addEventListener("mouseenter", () => {
     clearTimeout(energyTimer);
     energyPiece.classList.add("is-active");
