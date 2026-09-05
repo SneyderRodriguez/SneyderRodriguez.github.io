@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function drag(e) {
     if (!isDragging) return;
     e.preventDefault();
-    const currentX = e.pageX || (e.touches ? e.touches[0].pageX : startX);
+    const touch = e.touches && e.touches.length > 0 ? e.touches[0] : null;
+    const currentX = e.pageX ?? touch?.pageX ?? startX;
     const diffX = currentX - startX;
     const sensitivity = 0.5;
     const newTheta = theta + diffX * sensitivity;
@@ -89,11 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function dragEnd(e) {
     if (!isDragging) return;
     isDragging = false;
-
-    const currentX =
-      e.pageX || (e.changedTouches ? e.changedTouches[0].pageX : startX);
+    const touch =
+      e.changedTouches && e.changedTouches.length > 0 ? e.changedTouches[0] : null;
+    const currentX = e.pageX ?? touch?.pageX ?? startX;
     const diffX = currentX - startX;
-
     if (Math.abs(diffX) > 20) {
       if (diffX > 0) {
         prevCard();
