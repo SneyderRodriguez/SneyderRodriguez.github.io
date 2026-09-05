@@ -151,7 +151,11 @@
   animation: innerEnergy 7s ease-in-out infinite;
   animation-play-state: paused;
 }
-
+.loader.is-active {
+  animation-play-state: running;
+  opacity: 1;
+  filter: brightness(1) blur(0px);
+}
 .tesla-rays {
   position: absolute;
   inset: 0;
@@ -239,6 +243,20 @@
   animation: flyToContentSmooth 2.2s linear forwards;
 }
 
+.tesla-rays {
+  opacity: 1;
+  filter: brightness(1) blur(0px);
+  transition: opacity 0.6s ease-in, filter 0.6s ease-in;
+  animation-play-state: running;
+}
+
+.loader.is-active .box{
+  opacity: 1;
+  transition: opacity 0.6s ease-in;
+}
+.loader.is-active .box{
+  animation-play-state: running;
+}
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -414,19 +432,4 @@
         rgba(104, 69, 216, 0.55) 68%,
         var(--color-two) 100%);
   }
-}
-
-.tesla-rays {
-  opacity: 1;
-  filter: brightness(1) blur(0px);
-  transition: opacity 0.6s ease-in, filter 0.6s ease-in;
-  animation-play-state: running;
-}
-
-.loader.is-active .box{
-  opacity: 1;
-  transition: opacity 0.6s ease-in;
-}
-.loader.is-active .box{
-  animation-play-state: running;
 }
