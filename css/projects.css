@@ -232,15 +232,13 @@
 
 .project-navigation {
     position: absolute;
-    top: 0px;
-    left: 50%;
-    transform: translateY(-350%);
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    pointer-events: none;
-    z-index: 10;
+    padding: 0 10px;
 }
 
 .control-btn {
@@ -259,12 +257,8 @@
     box-shadow: 0 0 10px var(--shadow-blue);
 }
 
-#prev-btn {
-    margin-left: -95px;
-}
-
-#next-btn {
-    margin-right: -95px;
+#prev-btn, #next-btn {
+    margin: 0; /* elimina los -95px */
 }
 
 .control-btn:hover {

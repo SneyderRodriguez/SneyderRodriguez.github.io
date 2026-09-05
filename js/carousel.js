@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const projectLinks = document.querySelectorAll(".project-links");
 
   let currentIndex = 0;
-  let startX, startY;
   let isDragging = false;
   let theta = 0;
-  let radius = window.innerWidth <= 768 ? 250 : 300;
   const totalCards = cards.length;
 
   function init() {
@@ -26,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("touchstart", dragStart, { passive: true });
+    carousel.addEventListener("touchstart", dragStart, { passive: false });
     document.addEventListener("mousemove", drag);
     document.addEventListener("touchmove", drag, { passive: false });
     document.addEventListener("mouseup", dragEnd);
@@ -39,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cards.forEach((card, index) => {
       const cardAngle = angle * index;
       const rad = (cardAngle * Math.PI) / 180;
-      const x = radius * Math.sin(rad);
-      const z = radius * Math.cos(rad) * -1;
       card.style.transform = `rotateY(${cardAngle}deg) translateZ(${radius}px)`;
       card.dataset.index = index;
     });
@@ -48,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function rotateCarousel() {
     carousel.style.transform = `rotateY(${theta}deg)`;
-    currentIndex = Math.round(
-      Math.abs(theta / (360 / totalCards)) % totalCards
-    );
-    if (currentIndex >= totalCards) currentIndex = 0;
+    const angle = 360 / totalCards;
+    let index = Math.round(-theta / angle) % totalCards;
+    if (index < 0) index += totalCards; // normaliza índices negativos
+    currentIndex = index;
   }
 
   function nextCard() {
@@ -125,8 +121,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  function getRadius() {
+    return window.innerWidth <= 768 ? 250 : 300;
+  }
+  let radius = getRadius();
+
   window.addEventListener("resize", () => {
-    radius = window.innerWidth <= 768 ? 250 : 400;
+    radius = getRadius();
     arrangeCards();
     rotateCarousel();
   });

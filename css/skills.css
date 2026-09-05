@@ -58,7 +58,6 @@
     z-index: 1;
 }
 
-/* TAMAÑO DE LAS IMAGENES */
 .skill-html img,
 .skill-css img,
 .skill-future img,
@@ -82,7 +81,6 @@
     width: 75px;
 }
 
-/*UBICACIONES DE LAS HABILIDADES*/
 .skill-center {
     left: 290px;
     top: 280px;
@@ -126,4 +124,48 @@
 .skill-css {
     left: 61px;
     top: 499px;
+}
+@media (max-width: 768px) {
+  .skill-tree {
+    width: 100%;
+    aspect-ratio: unset;
+    transform: none;
+    margin: 0 auto;
+    animation: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem 1rem;
+    justify-items: center;
+    padding: 1rem 0;
+  }
+
+  .tree {
+    display: none;
+  }
+
+  .skill-center {
+    display: none;
+  }
+
+  .skill-java,
+  .skill-postgresql,
+  .skill-nodejs,
+  .skill-js,
+  .skill-html,
+  .skill-css {
+    position: static;
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-future,
+  .skill-block {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-tree {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
