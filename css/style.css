@@ -1,24 +1,17 @@
 :root {
-    /* Fondos */
     --fondoprincipal: #0f172a;
     --fondosecundario: #17233d;
-    /* Tipografía */
     --textoprincipal: #F8FAFC;
     --textosecundario: #CFCFEA;
-    /* Tecnología */
     --azumagico: #119DA4;
     --azulbrillante: #0C7489;
-    /* Destacados */
     --doradorunico: #D4AF37;
-    /* Sombras e iluminación*/
     --shadow-blue: rgba(17, 157, 164, .25);
     --shadow-gold: rgba(212, 175, 55, .20);
     --glass: rgba(23, 35, 61, .55);
     --elune-glow: rgba(17, 157, 164, 0.05);
-    /*Tipografia*/
     --font-title: "Sora", sans-serif;
     --font-text: "Inter" sans-serif;
-    /*Carousel*/
     --card-width: 300px;
     --card-height: 350px;
     --transition-speed: 0.5s;
@@ -132,18 +125,12 @@ body {
         );
     }
 }
-/*=====================================================================
-                                NAVBAR
-  =====================================================================*/
+
 .header-landing {
     position: fixed;
-    /*Decimos que se fije y no se mueva al hacer scroll*/
     top: 1rem;
-    /*Evitamos que toque el borde*/
     left: 0;
-    /*Le decimos que empiece desde el borde izquierdo*/
     width: 100%;
-    /*Le decimos que ocupe todo el ancho del navegador*/
     z-index: 1000;
 }
 
@@ -157,15 +144,10 @@ body {
     padding: 0 2.5rem;
     border-radius: 999px;
     background: var(--glass);
-    /*Esta linea ya me da el color de la navbar*/
     backdrop-filter: blur(12px);
-    /*backdrop-fliter permite que lo que está detras del elemento se vea desenfocado*/
     border: 1px solid rgba(255, 255, 255, .08);
-    /*añadimos el borde*/
     box-shadow: 0 8px 40px var(--shadow-blue);
-    /*box-shadow(desplazamiento en x, desplazamiento en y, desenfoque, color)*/
     transition: .3s ease;
-    /*anima los cambios de las propiedaddes para que ocurran de forma suave*/
 }
 
 .nav-cv {
@@ -202,9 +184,6 @@ body {
     transition: .3s ease;
 }
 
-/*=====================================================================
-                        ESTADOS DE LA NAVBAR
-  =====================================================================*/
 .nav-cv:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px var(--shadow-blue);
@@ -219,9 +198,6 @@ body {
     display: none;
 }
 
-/*=====================================================================
-                        ACCESIBILIDAD NAVBAR
-  =====================================================================*/
 .nav-list a:focus-visible,
 .nav-cv:focus-visible {
     outline: 3px solid var(--doradorunico);
@@ -229,9 +205,6 @@ body {
     border-radius: 50px;
 }
 
-/*=====================================================================
-                                ACERCA DE MÍ
-  =====================================================================*/
 #about {
   padding: 2rem 2.5rem 4rem;
 }
@@ -302,9 +275,6 @@ body {
   font-size: 1.18rem;
 }
 
-/*=====================================================================
-                        ESTADOS DEL ACERCA DE MÍ
-  =====================================================================*/
 .photo:hover {
   opacity: .9;
   transform: translateY(-4px);
@@ -321,4 +291,132 @@ body {
   background: linear-gradient(90deg,
       var(--azumagico),
       transparent);
+}
+/*=====================================================================
+                            FOOTER
+  =====================================================================*/
+#contact {
+    min-height: 250px;
+    padding: 70px 8% 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background:
+        linear-gradient(180deg,
+            var(--fondosecundario) 0%,
+            var(--fondoprincipal) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-divider {
+    width: 220px;
+    height: 2px;
+    background:
+        linear-gradient(90deg,
+            transparent,
+            var(--azumagico),
+            transparent);
+    box-shadow:
+        0 0 10px var(--shadow-blue);
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 70px;
+    height: auto;
+    filter:
+        drop-shadow(0 0 12px var(--shadow-blue));
+    transition: .35s ease;
+}
+
+.footer-subtitle {
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+    color: var(--textoprincipal);
+    letter-spacing: .08em;
+}
+
+.footer-logo::before {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(17, 157, 164, .18),
+            transparent 70%);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    flex-wrap: wrap;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--textosecundario);
+    font-family: var(--font-text);
+    font-size: .95rem;
+    font-weight: 500;
+    background: var(--glass);
+    border: 1px solid rgba(17, 157, 164, .25);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, .20);
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        color .35s ease;
+}
+
+.footer-social i {
+    font-size: 1.2rem;
+    color: var(--azumagico);
+    transition: .35s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-4px);
+    color: var(--textoprincipal);
+    border-color: var(--doradorunico);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .35),
+        0 0 16px var(--shadow-gold);
+}
+
+.footer-social a:hover i {
+    color: var(--doradorunico);
+    text-shadow:
+        0 0 12px var(--shadow-gold);
+}
+
+.footer-copy {
+    color: var(--textosecundario);
+    opacity: .75;
+    font-size: .8rem;
+    text-align: center;
+    margin-top: 15px;
 }

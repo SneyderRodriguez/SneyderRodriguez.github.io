@@ -81,9 +81,6 @@
   width: 100%;
 }
 
-/* ====================================================
-                  ESTADO DEL HERO
-   ==================================================== */
 .hero-content.energy-glow h1 {
   text-shadow: 0 0 20px rgba(53, 214, 255, 0.6), 0 0 40px rgba(122, 92, 255, 0.4);
   transition: text-shadow 0.8s ease;
@@ -95,9 +92,6 @@
   transition: color 0.8s ease, text-shadow 0.8s ease;
 }
 
-/* ====================================================
-                    PIEZA CENTRAL
-   ==================================================== */
 .loader {
   --color-one: #119DA4;
   --color-two: #0C7489;
@@ -422,10 +416,6 @@
   }
 }
 
-/* ====================================================
-                  PIEZA EN ESTADO ACTIVO
-   ==================================================== */
-.loader.is-active,
 .tesla-rays {
   opacity: 1;
   filter: brightness(1) blur(0px);
