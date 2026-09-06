@@ -145,7 +145,6 @@
     object-position: center;
     font-size: 4rem;
     text-shadow: 0 0 20px rgba(17, 157, 164, .25);
-    ;
     animation: pulse 3s infinite alternate;
     z-index: 2;
 }
