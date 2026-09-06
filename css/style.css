@@ -325,19 +325,12 @@ body {
 }
 
 .footer-logo {
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 70px;
-    height: auto;
-    filter:
-        drop-shadow(0 0 12px var(--shadow-blue));
-    transition: .35s ease;
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 125px;
+    height: 125px;
 }
 
 .footer-subtitle {
@@ -350,8 +343,11 @@ body {
 .footer-logo::before {
     content: "";
     position: absolute;
-    width: 110px;
-    height: 110px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 194px;
+    height: 194px;
     border-radius: 50%;
     background: radial-gradient(circle,
             rgba(17, 157, 164, .18),
