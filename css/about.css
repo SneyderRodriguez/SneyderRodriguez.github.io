@@ -43,6 +43,10 @@
 .photo {
   width: 290px;
   max-width: 100%;
+  opacity: .65;
+  filter:
+    grayscale(100%) brightness(1.25) contrast(.75);
+  transition: .35s ease;
 }
 
 .about-content {
