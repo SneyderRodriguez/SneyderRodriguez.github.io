@@ -1,10 +1,9 @@
 #hero {
-  padding-top: 7rem;
+  padding-top: 14rem;
 }
 
 .hero-container {
   max-width: 1200px;
-  min-height: 80vh;
   margin: 0 auto;
   padding: 0 2.5rem 2rem;
   display: grid;

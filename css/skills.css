@@ -1,14 +1,14 @@
 #skills {
-    min-height: auto;
+    padding: 2rem 2.5rem 4rem;
+    /* min-height: auto;
     padding-top: 2rem;
-    display: block;
+    display: block; */
 }
 
 .skill-container {
-    width: 100%;
     max-width: 1200px;
-    margin: auto;
-    padding: 0 2.5rem;
+    margin: 0 auto;
+    padding: 0 2.5rem 2rem;
 }
 
 .skill-title {
@@ -61,7 +61,7 @@
 .skill-html img,
 .skill-css img,
 .skill-future img,
-.skill-block img{
+.skill-block img {
     width: 60px;
     height: auto;
 }
@@ -125,47 +125,48 @@
     left: 61px;
     top: 499px;
 }
+
 @media (max-width: 768px) {
-  .skill-tree {
-    width: 100%;
-    aspect-ratio: unset;
-    transform: none;
-    margin: 0 auto;
-    animation: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 1rem;
-    justify-items: center;
-    padding: 1rem 0;
-  }
+    .skill-tree {
+        width: 100%;
+        aspect-ratio: unset;
+        transform: none;
+        margin: 0 auto;
+        animation: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem 1rem;
+        justify-items: center;
+        padding: 1rem 0;
+    }
 
-  .tree {
-    display: none;
-  }
+    .tree {
+        display: none;
+    }
 
-  .skill-center {
-    display: none;
-  }
+    .skill-center {
+        display: none;
+    }
 
-  .skill-java,
-  .skill-postgresql,
-  .skill-nodejs,
-  .skill-js,
-  .skill-html,
-  .skill-css {
-    position: static;
-    width: 70px;
-    height: 70px;
-  }
+    .skill-java,
+    .skill-postgresql,
+    .skill-nodejs,
+    .skill-js,
+    .skill-html,
+    .skill-css {
+        position: static;
+        width: 70px;
+        height: 70px;
+    }
 
-  .skill-future,
-  .skill-block {
-    display: none;
-  }
+    .skill-future,
+    .skill-block {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
-  .skill-tree {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .skill-tree {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

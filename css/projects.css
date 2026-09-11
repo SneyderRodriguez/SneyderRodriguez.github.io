@@ -1,15 +1,16 @@
 #projects {
-    min-height: auto;
+    padding: 2rem 2.5rem 4rem;
+    /* min-height: auto;
     padding-top: 1.5rem;
     padding-bottom: 4rem;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 100px; */
 }
 
-.projects-wrapper {
-    position: relative;
+.projects-container {
+    /* position: relative; */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 2.5rem 2rem;
 }
 
 .project-title {
