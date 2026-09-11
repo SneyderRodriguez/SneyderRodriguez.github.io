@@ -1,24 +1,24 @@
 #about {
-  padding: 2rem 2.5rem 4rem;
+  padding: clamp(1.5rem, 8vh, 6rem) 4rem;
 }
 
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2.5rem 2rem;
+  padding: 0 2.5rem 3rem;
 }
 
 .about-title {
   width: fit-content;
   margin-left: auto;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(0.5rem, 1vh, 0.7rem);
 }
 
 .about-title h2 {
   font-family: var(--font-title);
   font-size: clamp(2.4rem, 4vw, 3.4rem);
   color: var(--textoprincipal);
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
 }
 
 .about-phrase {
@@ -34,6 +34,7 @@
   grid-template-columns: 320px 1.5fr;
   gap: 3rem;
   align-items: center;
+  padding-top: 0.5rem;
 }
 
 .imagen {
@@ -53,7 +54,7 @@
   opacity: .65;
   filter:
     grayscale(100%) brightness(0.95) contrast(1.05);
-  transition: .35s ease;
+  transition: 0.35s ease;
 }
 
 .about-content {
@@ -90,4 +91,60 @@
   background: linear-gradient(90deg,
       var(--azumagico),
       transparent);
+}
+
+@media (max-width: 900px) {
+  #about {
+    padding: 5rem 2rem;
+  }
+
+  .about-container {
+    padding: 0 1rem 2rem;
+  }
+
+  .about-body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+
+  .about-phrase,
+  .about-title {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .imagen {
+    margin: 0 auto;
+  }
+
+  .about-title h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: 6rem 1rem 4rem;
+  }
+
+  .about-container {
+    padding: 0 0.75rem 2rem;
+  }
+
+  .about-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .imagen {
+    width: min(260px, 80vw);
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 }
