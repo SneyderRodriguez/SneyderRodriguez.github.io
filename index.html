@@ -8,51 +8,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/projects.css">
-    <script src="js/artifact.js"></script>
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Sneyder Rodriguez | Desarrollador Full-Stack Java</title>
 </head>
 
 <body>
-    <header class="header-landing">
-        <nav class="navbar" aria-label="Barra de navegación principal">
-            <a href="assets/CV/Jimmyan Sneyder Rodriguez Delgadillo CV.pdf" class="nav-cv" download=""
-                aria-label="Descargar Hoja de vida en PDF">
-                <span>Descargar CV</span>
-            </a>
-            <ul class="nav-list">
-                <li>
-                    <a href="#hero">
-                        <img src="assets/Icons/house.png" alt="Inicio">
-                        <span>Inicio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#about">
-                        <img src="assets/Icons/aboutme.png" alt="Acerca de mí">
-                        <span>Acerca de mí</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills">
-                        <img src="assets/Icons/skill.png" alt="Conocimientos">
-                        <span>Habilidades</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#projects">
-                        <img src="assets/Icons/project.png" alt="Proyectos">
-                        <span>Proyectos</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <a class="skip-link" href="#main-content">
+        Saltar al contenido principal
+    </a>
+    <main id="main-content">
+        <header class="header-landing">
+            <nav class="navbar" aria-label="Barra de navegación principal">
+                <a href="assets/CV/Jimmyan Sneyder Rodriguez Delgadillo CV.pdf" class="nav-cv" target="_blank"
+                    rel="noopener noreferrer">
+                    Descargar CV
+                </a>
+                <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación"
+                    aria-controls="main-menu" aria-expanded="false">
+                    <span aria-hidden="true" </span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                </button>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#hero">
+                            <img src="assets/Icons/house.png" alt="Inicio" aria-hidden="true">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about">
+                            <img src="assets/Icons/aboutme.png" alt="Acerca de mí" aria-hidden="true">
+                            <span>Acerca de mí</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#skills">
+                            <img src="assets/Icons/skill.png" alt="Conocimientos" aria-hidden="true">
+                            <span>Habilidades</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects">
+                            <img src="assets/Icons/project.png" alt="Proyectos" aria-hidden="true">
+                            <span>Proyectos</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
         <!-- ============================================================================
                                             HERO
              ============================================================================ -->
@@ -198,8 +207,12 @@
                                 </div>
                                 <div class="card-back">
                                     <div class="card-content">
-                                        <h3></h3>
-                                        <p></p>
+                                        <h3>Detalles</h3>
+                                        <p>Plataforma web gastronómica desarrollada con HTML5, CSS3, JavaScript Vanilla
+                                            y Bootstrap 5.</p>
+                                        <p>Cuenta con un catálogo dinámico de productos típicos colombianos, carrito de
+                                            compras interactivo con almacenamiento en `localStorage`, panel lateral
+                                            desplegable y navegación fluida adaptada a cualquier dispositivo.</p>
                                     </div>
                                 </div>
                             </div>
@@ -233,8 +246,13 @@
                                 </div>
                                 <div class="card-back">
                                     <div class="card-content">
-                                        <h3></h3>
-                                        <p></p>
+                                        <h3>Detalles</h3>
+                                        <p>Plataforma web de adopción de mascotas desarrollada con HTML5, CSS3 y
+                                            Bootstrap 5. Dispone de catálogo de peluditos, modal interactivo para
+                                            solicitudes, sección institucional y formulario de contacto.</p>
+                                        <p>Diseñada bajo un enfoque responsivo, utiliza CSS Grid, Flexbox, tipografías
+                                            de Google Fonts y una paleta visual definida mediante variables CSS
+                                            globales.</p>
                                     </div>
                                 </div>
                             </div>
@@ -268,8 +286,13 @@
                                 </div>
                                 <div class="card-back">
                                     <div class="card-content">
-                                        <h3></h3>
-                                        <p></p>
+                                        <h3>Detalles</h3>
+                                        <p>Plataforma web responsiva diseñada para un colectivo gastronómico local.
+                                            Construida con HTML5, CSS3 y Bootstrap 5, la interfaz integra carruseles
+                                            interactivos, tablas de precios, menús adaptables y un sistema de pedidos.
+                                        </p>
+                                        <p>Destaca por su maquetación modular y una identidad visual personalizada
+                                            mediante fuentes web y variables de color terracota.</p>
                                     </div>
                                 </div>
                             </div>
@@ -303,8 +326,13 @@
                                 </div>
                                 <div class="card-back">
                                     <div class="card-content">
-                                        <h3></h3>
-                                        <p></p>
+                                        <h3>Detalles</h3>
+                                        <p>Aplicación web para la gestión y seguimiento de tareas. Construida con
+                                            JavaScript (ES6+), HTML5 y CSS3, permite crear, categorizar, asignar
+                                            prioridades y definir fechas límite a distintas actividades. Incluye control
+                                            de estados (por hacer, en progreso, finalizado), persistencia de datos local
+                                            mediante localStorage y un modal interactivo para consultar el detalle de
+                                            cada tarea.</p>
                                     </div>
                                 </div>
                             </div>
@@ -326,19 +354,27 @@
                                             <i class="fa-brands fa-css"></i>
                                         </div>
                                         <div class="project-links">
-                                            <!-- URL Github y Demo -->
-                                            <a class="btn-github" href="#" target="_blank"
+                                            <!-- <a class="btn-github" href="#" target="_blank"
                                                 rel="noopener noreferrer">GitHub</a>
                                             <a class="btn-demo" href="#" target="_blank"
-                                                rel="noopener noreferrer">Demo</a>
+                                                rel="noopener noreferrer">Demo</a> -->
+                                            <span class="project-link-disabled" aria-disabled="true">
+                                                Github próximamente
+                                            </span>
+                                            <span class="project-link-disabled" aria-disabled="true">
+                                                Demo próximamente
+                                            </span>
                                         </div>
                                         <div class="card-glow"></div>
                                     </div>
                                 </div>
                                 <div class="card-back">
                                     <div class="card-content">
-                                        <h3></h3>
-                                        <p></p>
+                                        <h3>Detalles</h3>
+                                        <p>Es una aplicación desarrollada para explorar la integración con la API de
+                                            World of Warcraft. Busca implementar autenticación OAuth 2.0, consulta y
+                                            procesamiento de datos del juego, y una API REST propia utilizando Node.js,
+                                            aplicando buenas prácticas de desarrollo y manejo de errores.</p>
                                     </div>
                                 </div>
                             </div>
@@ -360,18 +396,24 @@
                                             <i class="fa-brands fa-css"></i>
                                         </div>
                                         <div class="project-links">
-                                            <a class="btn-github" href="#" target="_blank"
-                                                rel="noopener noreferrer">GitHub</a>
-                                            <a class="btn-demo" href="#" target="_blank"
-                                                rel="noopener noreferrer">Demo</a>
+                                            <a class="btn-github"
+                                                href="https://github.com/jorgegutierrezvallejo/ProyectoFinalJava13-Grupo6.git"
+                                                target="_blank" rel="noopener noreferrer">GitHub</a>
+                                            <a class="btn-demo"
+                                                href="https://jorgegutierrezvallejo.github.io/ProyectoFinalJava13-Grupo6/"
+                                                target="_blank" rel="noopener noreferrer">Demo</a>
                                         </div>
                                         <div class="card-glow"></div>
                                     </div>
                                 </div>
                                 <div class="card-back">
                                     <div class="card-content">
-                                        <h3></h3>
-                                        <p></p>
+                                        <h3>Detalles</h3>
+                                        <p>Plataforma web de agendamiento veterinario desarrollada con HTML5, CSS3,
+                                            JavaScript, Spring Boot y MySQL. Permite a propietarios registrar sus
+                                            mascotas y reservar citas en tiempo real según la disponibilidad de un
+                                            médico veterinario independiente, ofreciendo un panel administrativo para la
+                                            gestión integral de agenda e interfaz adaptable a cualquier dispositivo.</p>
                                     </div>
                                 </div>
                             </div>
@@ -417,8 +459,10 @@
                 Full-Stack Java Developer</small>
         </div>
     </footer>
+    <script src="js/artifact.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/body.js" defer></script>
 </body>
-<script src="js/carousel.js"></script>
-<script src="js/body.js"></script>
 
 </html>
