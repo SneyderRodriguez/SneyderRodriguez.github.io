@@ -294,7 +294,7 @@
         --carousel-radius: 300px;
     }
 
-    .title {
+    .project-title {
         font-size: 1.8rem;
     }
 
@@ -318,7 +318,7 @@
         --carousel-radius: 250px;
     }
 
-    .title {
+    .project-title {
         font-size: 1.5rem;
     }
 

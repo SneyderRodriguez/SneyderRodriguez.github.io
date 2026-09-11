@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion) {
+    return;
+  }
   const energyPiece = document.querySelector(".loader");
   const heroContent = document.querySelector(".hero-content");
   if (!energyPiece) return;

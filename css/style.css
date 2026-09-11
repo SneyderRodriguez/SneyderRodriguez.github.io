@@ -11,7 +11,7 @@
     --glass: rgba(23, 35, 61, .55);
     --elune-glow: rgba(17, 157, 164, 0.05);
     --font-title: "Sora", sans-serif;
-    --font-text: "Inter" sans-serif;
+    --font-text: "Inter", sans-serif;
     --card-width: 300px;
     --card-height: 350px;
     --transition-speed: 0.5s;
@@ -445,5 +445,30 @@ body {
     .nav-cv {
         padding: 0.65rem 0.9rem;
         font-size: 0.85rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .loader,
+    .loader .box,
+    .star,
+    .glitch-effect,
+    .energy-particle,
+    .skill-tree,
+    .project-carousel {
+        animation: none !important;
+    }
+
+    .project-card,
+    .card-inner {
+        transition: none !important;
     }
 }
