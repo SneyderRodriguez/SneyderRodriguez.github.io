@@ -1,5 +1,5 @@
 #about {
-  padding: clamp(1.5rem, 8vh, 6rem) 4rem;
+  padding: clamp(5rem, 10vh, 8rem) 4rem;
 }
 
 .about-container {
@@ -11,7 +11,7 @@
 .about-title {
   width: fit-content;
   margin-left: auto;
-  margin-bottom: clamp(0.5rem, 1vh, 0.7rem);
+  margin-bottom: clamp(3rem, 6vh, 5rem);
 }
 
 .about-title h2 {
@@ -34,7 +34,7 @@
   grid-template-columns: 320px 1.5fr;
   gap: 3rem;
   align-items: center;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 }
 
 .imagen {
